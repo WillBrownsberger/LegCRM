@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "LegCRMtoGraph": {
+      "commandName": "Project",
+      "sqlDebugging": true
+    }
+  }
+}

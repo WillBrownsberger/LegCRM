@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30204.135
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LegCRMtoGraph", "LegCRMtoGraph\LegCRMtoGraph.csproj", "{90281C1C-D91B-4475-BFEE-43B307F342EC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SendMailGraph", "SendMailGraph\SendMailGraph.csproj", "{E5238FDA-E5E6-49AE-A219-D857AC192E32}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Geocodio", "Geocodio\Geocodio.csproj", "{5B752400-06A3-4803-B7F4-5ECAB83EEBDF}"
+	ProjectSection(ProjectDependencies) = postProject
+		{90281C1C-D91B-4475-BFEE-43B307F342EC} = {90281C1C-D91B-4475-BFEE-43B307F342EC}
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "syntax", "syntax\syntax.csproj", "{8156D33F-13CE-4669-B5FF-15A868FDE553}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "parseMessages", "parseMessages\parseMessages.csproj", "{CBEC28CE-531E-4E54-AC29-EE596430B11A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{90281C1C-D91B-4475-BFEE-43B307F342EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90281C1C-D91B-4475-BFEE-43B307F342EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90281C1C-D91B-4475-BFEE-43B307F342EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90281C1C-D91B-4475-BFEE-43B307F342EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E5238FDA-E5E6-49AE-A219-D857AC192E32}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5238FDA-E5E6-49AE-A219-D857AC192E32}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5238FDA-E5E6-49AE-A219-D857AC192E32}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5238FDA-E5E6-49AE-A219-D857AC192E32}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B752400-06A3-4803-B7F4-5ECAB83EEBDF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B752400-06A3-4803-B7F4-5ECAB83EEBDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B752400-06A3-4803-B7F4-5ECAB83EEBDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B752400-06A3-4803-B7F4-5ECAB83EEBDF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8156D33F-13CE-4669-B5FF-15A868FDE553}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8156D33F-13CE-4669-B5FF-15A868FDE553}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8156D33F-13CE-4669-B5FF-15A868FDE553}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8156D33F-13CE-4669-B5FF-15A868FDE553}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CBEC28CE-531E-4E54-AC29-EE596430B11A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CBEC28CE-531E-4E54-AC29-EE596430B11A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CBEC28CE-531E-4E54-AC29-EE596430B11A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CBEC28CE-531E-4E54-AC29-EE596430B11A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C506F4C6-D6BE-408A-BBD2-9B6FF830E2A1}
+	EndGlobalSection
+EndGlobal
