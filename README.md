@@ -9,7 +9,7 @@ This software is built to run in the Microsoft Azure cloud. The major components
 2. An SQL Server -- the underlying data base is SQL Server.
 3. Azure secret vaults for storing passwords, etc.
 4. Several Web Jobs that run C# routines to interact with Microsoft Graph to read, parse, and send email messages.  
-5. Strongly desirable additional elements from outside Azure include:
+Strongly desirable additional elements from outside Azure include:
 * List of voters (could run without this and build through correspondence)
 * Google Maps API key (to support geographic visualization and refinement of constituent search results)
 * US Postal Service API Key (for address standardization and zip code assignment; the software only handles U.S. formatted addresses)
