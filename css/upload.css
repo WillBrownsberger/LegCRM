@@ -1,0 +1,349 @@
+/*
+* upload form styling 
+*
+*/
+
+#wic-field-group-initial,
+.wic-selectmenu-wrapper.upload-status,
+#serialized_upload_parameters,
+#serialized_column_map,
+#serialized_match_results,
+#serialized_default_decisions,
+#serialized_final_results {
+	display: none;
+}
+
+#wic-form-upload #wic-field-group-save_options {
+	margin: 0 7.1111111%;
+}	
+
+#wic-form-upload #wic-inner-field-group-save_options-toggle-button {
+	display: none;
+	margin: 0;
+}
+#wic-form-upload #wic-form-main-groups {
+	width: 100%;
+}
+
+#wic-form-upload #wic-field-group-save_options .charset.wic-selectmenu-wrapper {
+	width: 300px;
+}
+
+#upload-form-slot #wic-form-main-groups .wic-form-field-group-legend {
+	margin-left: 0;
+}
+
+#upload-form-slot #wic-field-group-activity,
+#upload-form-slot #wic-field-group-constituent_match {
+	margin-top: 0;
+}
+
+.horbar-clear-fix {
+	clear: both;
+	display: block;
+	height: 0px; 
+	margin: 0px; 
+	width: 100%;
+}
+
+#wic-form-upload #wic-field-group-save_options .wic-input {
+	margin: 0;
+	width: 100%;
+}
+
+#wic-form-upload #wic-field-group-save_options .wic-label {
+	display: block;
+	margin: 0;
+	padding: 0;
+	text-align: left;
+}
+
+#wic-form-upload  input#escape.wic-input.escape,
+#wic-form-upload  input#max_line_length.wic-input.max-line-length,
+#wic-form-upload  input#max_execution_time.wic-input.max-execution-time
+{
+	width: 50px;
+	display: block;
+}
+
+#wic-inner-field-group-upload_parameters-toggle-button {
+	display: none;
+}
+
+#wic-form-upload-map h4 {
+	margin: 6px 0 2px 0;
+}
+
+.wic-draggable {
+	width: 130px;
+	height: 20px;
+	cursor: move;
+	background: #ffffff;
+	border: 1px solid #aaa;
+	border-radius: 3px;
+	margin: 2px 0; 
+	text-align: center;
+}
+
+.wic-droppable {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	background: #f7f7f7;
+	border: 1px solid #aaa;
+	border-radius: 3px;
+	float: left;  
+	height: 50px;
+	margin: 0 .5% 2px 0;
+	padding: 2px 2px 10px 2px; 
+	width: 24.5%;
+}
+
+.wic-draggable,
+.wic-droppable,
+.wic-sortable {
+   -ms-user-select: none; /* IE 10+ */
+   -moz-user-select: -moz-none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+   user-select: none;
+}
+
+.wic-draggable.moving-draggable {
+	border: 2px solid #0099d5;
+	background: #ffffff;
+}
+
+.wic-droppable.wic-droppable-highlight.wic-droppable-hover {
+	border: 2px solid #0099d5;
+	font-weight: bold;
+}
+
+.wic-droppable.wic-droppable-highlight {
+}
+
+.wic-droppable.wic-state-dropped {
+}
+
+#wic-field-group-mappable,
+#wic-field-group-upload_parameters {
+	margin: 0;
+}
+
+#wic-form-upload-map #wic-form-main-groups {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	border-left: none;
+	display: inline-block;
+	height: initial;
+	margin: 0 .88888888% 0 7.11111%;
+	overflow-y: initial;
+	overflow-x: initial;
+	padding: 0 30px 0 0;
+	vertical-align: top;
+	width: 13.333333%;	
+}
+
+#wic-form-upload-map #wic-form-sidebar-groups {
+	display: inline-block;
+	overflow-x: initial;
+	width: 78.666666%; 
+	padding: 0;
+	border-left: none;
+}
+
+.upload-validation-perfect {
+	color: #3b5;
+}
+
+.upload-validation-ok {
+	color: #CC922F;
+}
+
+.upload-validation-bad {
+	color: #f33;
+	font-weight: bold;
+}
+
+
+#wic-validate-progress-bar {
+	margin: 10px 7.11111%;
+	width: 85.777777%;
+}
+
+#wic-backout-progress-bar,
+#wic-finish-progress-bar {
+	display: none;
+}
+
+#validation-results {
+	margin: 10px 0;
+	width: 100%;
+}
+
+#validation-results-table-wrapper {
+	margin: 0 7.11111%;
+}
+
+#wic-inner-field-group-mappable-toggle-button {
+	display: none;
+}
+
+
+#wic-upload-progress-bar {
+	display: none;
+	height: 15px;
+	margin: 0 7.1111111% 20px 7.1111111%;
+}
+
+ul.wic-sortable {
+	padding: 0 0 40px 0;
+}
+
+.wic-sortable-item {
+	width: 96%;
+	height: 30px;
+	cursor: move;
+	background: #ffffff;
+	border: 1px solid #aaa;
+	border-radius: 3px;
+	margin: 10px 0 0 0; 
+	line-height: 30px;
+	padding: 5px;
+	text-align: center;
+	vertical-align: bottom;
+}
+
+#upload-match-wrap {
+	margin: 0 7.1111111% 20px 7.1111111%;
+}
+#wic-match-list {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	background: #f4f4f4;
+	border: 1px solid #aaa;
+	border-radius: 3px;
+	float: left;  
+	font-weight: bold;
+	padding: 0 2%;
+	margin: 0 1% 0 0;
+	width: 49%;
+}
+
+#wic-unused-match-list {
+	background: #fee;
+	border-color: #f33;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	background: #f4f4f4;
+	border: 1px solid #aaa;
+	border-radius: 3px;
+	float: left;  
+	padding: 0 2%;
+	margin: 0 0 0 1%;
+	width: 49%;
+}
+
+#upload-results-table-wrapper {
+	margin: 0;
+	width: 100%;
+}
+.wic-statistic-long {
+	min-width: 250px;
+}
+#wic-upload-default-form-body {
+	margin: 0 7.1111%;
+}
+ul.upload-status-summary {
+	list-style-type: square;
+	list-style-position: inside;
+	font-size: 0.9em;
+	margin-right: 20px;
+}
+
+#wic-upload-default-form-body {
+	margin: 0 7.1111%;
+}
+
+#wic-upload-default-form-body  .field-group-show-hide-button {
+	margin: 0;	
+}
+
+#wic-upload-default-form-body  .wic-input {
+	display: block;
+	width: 150px;	
+}
+
+#wic-upload-default-form-body .wic-label,
+#wic-upload-default-form-body .wic-label.state  {
+	display: block;
+	margin: 0;
+	font-size: 0.9em;	
+	text-align: left; 
+	
+}
+
+#wic-upload-default-form-body #wic-form-main-groups,
+#wic-upload-default-form-body #wic-form-sidebar-groups{
+	width: 50%;
+	height: auto;
+	overflow-y: auto;
+}
+
+#wic-upload-default-form-body .wic-selectmenu-wrapper.wic-input.issue {
+	width: 100%;
+}
+
+#new-issue-progress-bar-legend {
+  font-size: 0.8em;
+}
+
+#new-issue-progress-bar {
+  height: 10px;
+}
+
+#initial-upload-status,
+#wic-form-upload-set-defaults button#wic-inner-field-group-issue-toggle-button,
+#wic-form-upload-set-defaults button#wic-inner-field-group-address-toggle-button,
+#wic-form-upload-set-defaults button#wic-inner-field-group-phone-toggle-button,
+#wic-form-upload-set-defaults button#wic-inner-field-group-email-toggle-button {
+	display: none;
+}
+
+#upload-settings-need-attention {
+	background: #fff4f4;
+	border-left: 4px solid red;
+	margin: 10px 6% 0 0;
+	padding: 10px 20px;
+	list-style: square;
+	list-style-position: inside;
+}
+
+#upload_info {
+	margin: 10px 7.11111%;
+}
+
+#backout_legend {
+	display: none;
+}
+#upload-game-plan {
+	margin: 0 7.1111%;
+}
+
+.backout-button-legend,
+.download-button-legend {
+	margin: -10px 0 30px 7.1111%;
+}
+
+
+#wic-droppable___address___address_line_part_2.wic-state-dropped {
+	border: 1px solid red;
+}
+
+#wic-form-upload-download #wic-staging-table-download-button {
+	display: block;
+}
+

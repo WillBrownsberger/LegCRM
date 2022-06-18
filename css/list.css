@@ -1,0 +1,401 @@
+
+
+/***************************************************************** 
+*
+* list styling 
+*
+******************************************************************/
+
+/* outer ul for whole list */
+ul.wic-post-list  {
+	list-style: none;
+	margin: 0 0.88888%;
+	max-height: calc( 100vh - 380px);
+	overflow-y: scroll;
+	padding: 0;
+}
+
+.list-popup-wrapper,
+#list-ajax-scroll {
+	display: none;
+}
+
+
+
+/* appears on options, fields and obsolesced upload list */
+#wic-list-button-row {
+	margin-left: 7.11111%;
+}
+
+#wic-list-button-row .wic-form-button {
+	margin-left: 0;
+}
+
+/* alternating row colors can be applied with styling, but cleaner without*/
+.pl-odd, 
+.pl-even {
+	background: #f7f7f7;
+}
+
+.pl-odd:hover,
+.pl-even:hover {
+	background: white;
+}
+
+.wic-post-list-line.top-blog {
+	font-weight: 550;
+}
+
+.wic-post-list-headers {
+	background: #f7f7f7;
+	margin-top: 4px;
+	border-bottom: solid 1px #eee;
+	border-top: solid 1px #eee;
+}
+.wic-post-list-button.pl-odd,
+.wic-post-list-button.pl-even {
+	border-left: 4px solid #f7f7f7;
+}
+
+.pl-even.case-open, 
+.pl-odd.case-open {
+	border-left-color: #7AD03A;
+}
+
+.pl-even.case-open.overdue, 
+.pl-odd.case-open.overdue {
+	border-left-color: red;
+}
+
+/* header (horizontal) list styling */
+ul.wic-post-list-headers {
+	display: flex;
+	font-weight: 700;
+	list-style: none;
+	padding: 15px .88889%;
+	margin: 0;
+}
+
+ul.wic-post-list-category-headers {
+	font-size: 1.2em;	
+	font-weight: 700;
+	list-style: none;
+	padding: 15px .88889%;
+	margin: 0;
+}
+
+li.wic-post-list-header,
+li.wic-post-list-field {
+	display: inline-block;
+	vertical-align: top;	
+}
+button.wic-post-list-button {
+	border: none;	
+	cursor: pointer;
+	margin: 0;
+	padding: 0;
+	text-align: left; 
+	width: 100%;
+}
+
+
+ul.wic-post-list-line {
+ 	
+	display: flex;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 15px .88889%;
+	vertical-align: top;
+	list-style: none;
+	width: 100%;	
+}
+
+.activity-list-custom-add-ons {
+	display: inline-flex;
+}
+
+/* initial values for override for individual custom fields */
+.wic-post-list-header.constituent-custom-field,
+.wic-post-list-field.constituent-custom-field {
+	display: none;
+	width: 10%; 
+	overflow-x: hidden; 
+	order: 100;	
+}
+.activity-custom-field {
+	display: none;
+	order: 100;
+}
+
+ul.wic-post-list-category-line {
+ 	
+	display: inline-block;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	font-size: 1.2em;
+	font-weight: 700;
+	margin: 0;
+	padding: 0 .88889%;
+	vertical-align: top;
+	list-style: none;
+	width: 100%;	
+}
+
+/****************************************************************
+* list field styling
+*
+******************************************************************/
+
+
+.pl-even.wic-post-list-button.option-group-disabled,
+.pl-odd.wic-post-list-button.option-group-disabled {
+	background: #f9f9f9;
+	border-bottom: 1px solid #f7f7f7;
+	color: #999;
+}
+
+.wic-post-list-button.option-group-disabled:hover {
+	background: #eee;
+	color: #777;
+}
+
+#wic-form-data-dictionary #field_order {
+	width: 52px;
+}
+
+.wic-post-list-header {
+	color: #999;
+}
+
+/* list element widths */
+.pl-constituent-first_name{ width:10%; overflow-x: hidden; order: 10;}
+.pl-constituent-middle_name{ width:7%; overflow-x: hidden; order: 20;}
+.pl-constituent-last_name{ width:10%; overflow-x: hidden; order: 30;}
+.pl-constituent-phone{ width:10%; overflow-x: hidden; order: 40;}
+.pl-constituent-email{ width:25%; overflow-x: hidden; order: 50;}
+.pl-constituent-address{ width:25%; overflow-x: hidden; order: 60; }
+
+.pl-activity-activity_date{ width:10%;}
+.pl-activity-activity_type{ width:10%;}
+.pl-activity-activity_amount{ width:10%; text-align: right; }
+.pl-activity-constituent_id{ width: 20%; margin-left: 1%; }
+.pl-activity-issue{ width: 39%; }
+.pl-activity-pro_con{ width:10%; }
+.pl-activity-activity_issue_id{ width:61%;}
+
+.pl-issue-issue_staff{ width:12%;}
+.pl-issue-wic_live_issue{ width:12%;}
+.pl-issue-follow_up_status{ width:12%;}
+.pl-issue-post_title{ width:40%;}
+.pl-issue-post_category{ width:12%;}
+.pl-issue-review_date{ width:12%;}
+
+
+.pl-option_group-option_group_desc{ width:30%;}
+.pl-option_group-enabled{ width:10%;}
+.pl-option_group-option_value{ width:60%;}
+
+.pl-owner-wic_owner_name {width:25%; word-wrap: break-word; padding-right: 5px;}
+.pl-owner-siteurl {width:25%;  text-overflow: hidden; padding-right: 5px;}
+.pl-owner-blogname {width:25%; word-wrap: break-word; padding-right: 5px;}
+.pl-owner-wic_owner_type {width:15%; word-wrap: break-word; padding-right: 5px;}
+.pl-owner-wic_owner_id {width: 10%}
+
+.pl-external-external_type { width: 23%; }
+.pl-external-external_identifier { width: 23%; }
+.pl-external-external_name { width: 23%; }
+.pl-external-case_assigned { width: 23%; }
+.pl-external-enabled { width: 8%; }
+
+.pl-data_dictionary-group_slug { width:15%;}
+.pl-data_dictionary-field_label { width:15%;}
+.pl-data_dictionary-field_type { width:20%;}
+.pl-data_dictionary-option_group { width:20%;}
+.pl-data_dictionary-enabled { width:10%;}
+
+.pl-upload-upload_time { width: 15%; }
+.pl-upload-upload_by { width: 15%; }
+.pl-upload-upload_file { width: 45%; }
+.pl-upload-upload_status { width: 10%; }
+.wic-list-legend {
+	margin: 10px 7.11111%;
+}
+
+.pl-trend-id { width: 50%; overflow-x: hidden; }
+.pl-trend-post_category { width: 20%; overflow-x: hidden; }
+[class^="wic-post-list-header pl-trend-type"],
+[class^="wic-post-list-field pl-trend-type"],
+.pl-trend-total,
+.pl-trend-pro,
+.pl-trend-con,
+.pl-trend-nf {
+	width: 5%;
+	margin-left: 1%;
+	overflow-x: hidden;
+}
+
+/* 
+* 
+* special formatting for search_log list 
+*
+*/
+
+/* split list lines into two buttons  -- for other lists, single 100% button*/
+.wic-post-list-button.wic-search-log-list-button {
+	width: 96.444444%
+}
+.wic-favorite-button {
+	border: none;	
+	background: transparent;
+	cursor: pointer;
+	padding: 0;
+	vertical-align: top;
+	width: 3.555555%;
+}
+
+/* line height setting lines up stars vertically with first line of main button */
+.wic-favorite-button span.dashicons-star-filled {
+	color: #FFD700;
+	font-size: 2em;
+	line-height: 1.8em;
+}
+.wic-favorite-button span.dashicons-star-empty {
+	color: #aaa;
+	font-size: 1.8em;
+	line-height: 1.8em;
+}
+
+
+#share_name {
+	margin-left: .8888%;
+	margin-right: 0;
+	width: 27.555555%;
+}
+#share_name_save_flag {
+	display: none;
+	vertical-align: top;
+}
+/* want main background to show through for the header line in search log */
+li.pl-odd.search_log {
+	background: transparent;
+}
+/* this space now appears in every list, but with zero width */
+div.wic-post-list-headers-spacer {
+	width: 0;
+	margin: 0;
+}
+/* give it width only in search_log to align with button*/
+div.wic-post-list-headers-spacer.search_log {
+	background: transparent;
+	display: inline-block;
+	height: 2em;
+	width: 3.555555%;
+	margin: 0;
+}
+/* wrapped headers in div for styling in search log case */
+div.wic-post-list-headers.search_log {
+	display: inline-block;
+	width: 96.444444%;
+}
+
+/* elements present in sort row and needed for processing, but not displayed */
+.wic-post-list-header.pl-search_log-entity,
+.wic-post-list-field.pl-search_log-entity,
+.wic-post-list-header.pl-search_log-is_named,
+.wic-post-list-field.pl-search_log-is_named,
+.wic-post-list-header.pl-search_log-favorite,
+.wic-post-list-field.pl-search_log-favorite,
+li.pl-search_log-serialized_search_parameters { 
+	display: none;
+}
+
+/* dislpayed widths set to match button widths scaled by .964444 */
+.pl-search_log-search_time{ width:18.33333%;}
+.pl-search_log-serialized_search_array{ width:36.85%;}
+.pl-search_log-share_name{ width:14.74%;}
+.pl-search_log-download_time{ width:14.74%;}
+.pl-search_log-result_count { width: 14.74%}
+
+#list_terminator {
+	margin-left: 10px;
+}
+
+.action-ajax-loader { display: none; }
+
+@media only screen and (max-width: 960px) {
+
+	#wic-post-export-button-button {
+		margin: 0 2% -5px 0;
+		padding: 0;
+	}
+	
+	#wic-post-export-button {
+		width: 58%;
+	}
+	
+	
+	[class^="wic-post-list-header pl-trend-type"],
+	[class^="wic-post-list-field pl-trend-type"],
+	.pl-trend-nf,
+	.pl-trend-post_category {
+		display: none;
+	}
+	.pl-trend-id {
+		width: 60%;
+	}
+	
+	/* list element widths for constituent search results*/	
+	.pl-constituent-first_name,
+	.pl-constituent-last_name { 
+		width: 30%;
+	}
+	.pl-constituent-address { 
+		width: 40%;
+	}
+	li.wic-post-list-header.pl-constituent-middle_name, 
+	li.wic-post-list-field.pl-constituent-middle_name,
+	li.wic-post-list-header.pl-constituent-phone, 
+	li.wic-post-list-field.pl-constituent-phone,
+	li.wic-post-list-header.pl-constituent-email, 
+	li.wic-post-list-field.pl-constituent-email {
+		display: none;
+	}
+	
+	.pl-constituent-city{ width:16%;}
+
+	/* list element widths for issue search results */
+	li.wic-post-list-header.pl-issue-issue_staff, 
+	li.wic-post-list-field.pl-issue-issue_staff,	
+	li.wic-post-list-header.pl-issue-follow_up_status, 
+	li.wic-post-list-field.pl-issue-follow_up_status,
+	li.wic-post-list-header.pl-issue-post_category, 
+	li.wic-post-list-field.pl-issue-post_category,
+	li.wic-post-list-header.pl-issue-wic_live_issue, 
+	li.wic-post-list-field.pl-issue-wic_live_issue	 {
+		display: none;
+	}	
+	.pl-issue-post_title{ width:100%;}
+
+	li.wic-post-list-field.pl-activity-activity_date{ width:20%;}
+	li.wic-post-list-field.pl-activity-activity_type{ width:20%;}
+	li.wic-post-list-field.pl-activity-constituent_id { width: 50%; margin-left: 1%; }
+	li.wic-post-list-field.pl-activity-issue {display: none;}
+	li.wic-post-list-field.pl-activity-pro_con,
+	li.wic-post-list-field.pl-activity-activity_amount{
+		display: none;
+	}
+
+	li.wic-post-list-header.pl-activity-activity_date{ width:20%;}
+	li.wic-post-list-header.pl-activity-activity_type{ width:20%;}
+	li.wic-post-list-header.pl-activity-constituent_id { width: 50%; margin-left: 1%; }
+	li.wic-post-list-header.pl-activity-issue {display: none;}
+	li.wic-post-list-header.pl-activity-pro_con,
+	li.wic-post-list-header.pl-activity-activity_amount{
+		display: none;
+	}
+
+
+}

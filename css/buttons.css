@@ -1,0 +1,189 @@
+/*
+*
+*	Uniform styling for wp-issues-crm buttons -- consistent with jquery ui
+*
+*	Note -- excludes field group show/hide buttons and list buttons -- see main form styling
+*/
+
+/* main button style (subject line items styled like buttons) -- combining elements of wp and ui styling */
+.wic-form-button,
+.inbox-subject-line, 
+#crm-settings .button.button-primary {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	box-shadow: none;
+	background: #f6f6f6 url("jquery-ui-1.11.4.custom/images/ui-bg_highlight-soft_100_f6f6f6_1x100.png") repeat-x scroll 50% 50%;
+    border: 1px solid #ddd;
+	border-radius: 3px;
+    color: #999;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 1.1em;
+    font-weight: bold;
+    height: 28px;
+    line-height: 26px;
+    margin: 0 0 0 .888%;
+    overflow: visible;
+    padding: 0;
+    position: relative;
+    text-align: center;
+    text-shadow: none;
+    width: 13.333%;
+}
+
+#crm-settings .button.button-primary:hover,
+.wic-form-button:hover {
+  	background: #2ea2cc url("jquery-ui-1.11.4.custom/images/ui-bg_highlight-soft_25_2ea2cc_1x100.png") repeat-x scroll 50% 50%;
+    border: 1px solid #2ea2cc;
+    color: #fff;
+    font-weight: bold;
+}
+/* do not style background for subject line*/
+.inbox-subject-line {
+	background: #ffffff;
+}
+
+
+/* span within buttons */
+.button-highlight {
+	color:  #444;
+}
+button:hover .button-highlight {
+	color:  #FFD700;
+}
+
+.wic-form-button.wic-form-button-selected span.dashicons {
+	color: #444;
+}
+
+.wic-form-button.wic-form-button-selected:hover span.dashicons {
+	color: #ffd700;
+}
+
+#wic-top-level-form button#wic_upload_select_button:first-child,
+.wic-form-button.wic-top-menu-button {
+	width: 6.2222%;
+}
+
+#wic-top-level-form button:first-child {
+	width: 5.3333%
+}
+
+.wic-form-button span.dashicons {
+	vertical-align: middle;
+}
+
+/* positioning action buttons within form */
+.wic-post-form .wic-form-button {
+	margin: 0 .888% 20px 7.1111111%;
+}
+
+#wic-post-list .wic-form-button.second-position,
+.wic-post-form .second-position {
+	margin: 0 .888% 20px 0;
+} 
+
+
+/* style to line up with labels above it */
+.row-add-button {
+	background: transparent;
+	border: none;
+	color: #ccc;
+	cursor: pointer;
+	display: inline-block;
+	margin: 0;
+	padding: 0;
+
+}
+
+.row-add-button:hover {
+	color: green;
+} 
+
+/* delete button for multi-rows  ( really a label )   */
+.wic-input-deleted-label {
+	cursor: pointer;
+	color: #ccc;
+	display: inline-block;
+	margin: 0;
+	width: 20px;
+}
+/* note -- this is a check box, manipulated by its label, the deleted 'x' */
+input[type=checkbox].wic-input-deleted {
+    display: none;
+}
+
+.wic-input-deleted-label:hover {
+	color: red;	
+}
+
+
+.field-group-show-hide-button {
+	background: none;
+	border: 0;
+	cursor: pointer;
+	font-size: 1em;
+	margin: 0;
+	padding: 0 0 0 0;
+	text-align: left;	
+	width: 100%
+}
+
+.field-group-show-hide-button:hover {
+	color: #777;
+}
+
+label.wic-label.wic-post-export-button {
+	display: none;
+}
+
+#wic-post-export-button {
+	width: 13.3333333%;
+}
+
+#wic-activity-export-button,
+#wic-post-export-button-button {
+	width: 13.3333333%;
+	margin: 0 0 2px 7.111%;
+	height: 26px;
+}
+
+
+#id_search_to_form.in-first-position {
+	margin: 0 0 2px 7.11111%;
+}
+
+#delete_constituents_button,
+#delete_activities_button {
+	margin-right: 1.1111%
+}
+
+#show_map_button,
+#delete_activities_button, 
+#delete_constituents_button,
+#search_inspection_button,
+#send_email_to_found_button,
+#id_search_to_form {
+    vertical-align: top;
+    width: 6.2222%;
+}
+
+
+@media only screen and (max-width: 960px) {
+
+	.wic-input-deleted-label,
+	.row-add-button {
+		margin-left: .8888%;
+	}
+
+	#wic-post-list .wic-form-button,
+	.wic-post-form .wic-form-button {
+		margin: 0 .888888%;
+	}
+
+	.second-position {
+	
+	} 
+
+}

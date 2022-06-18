@@ -1,0 +1,221 @@
+/*
+*
+* Styling for activity list and form popup
+*
+*
+*/
+#wic-activity-area {
+	max-height: 90vh;
+	overflow-y: scroll;
+}
+
+#no_activities_message,
+#hidden-blank-activity-form,
+#wic-form-sidebar-groups #wic-activity-area .wic-label,
+#filter-activities-menu, 
+#activity-area-ajax-loader {
+	display: none;
+}
+
+#filter-activities-menu {
+	margin-top: 5px;
+}
+
+#filter-activities-menu {
+	width: 240px;
+}
+
+h4#filter-activities-header {
+	margin-top: 0;
+	padding-top: 10px;
+}
+#wic-activity-area #show_map_button,
+#wic-activity-area #upload-document-button,
+#wic-activity-area #delete_activities_button,
+#wic-activity-area #reassign_activities_button,
+#filter-activities-button,
+#add-new-activity-button,
+#download-activities-form-button,
+#wic-activity-area #send_email_to_found_button {
+	margin: 0 1.8431% 10px 0%;
+	padding: 0;
+	text-align: middle;
+	vertical-align: bottom;
+	width: 5.530%;
+	display: inline-block;
+}
+
+#filter-activities-button .dashicons {
+    vertical-align: middle;
+}
+
+#wic-activity-area div.wic_multi_select {
+    background: transparent;
+    border: none;
+    border-bottom: 1px dashed grey;
+    height: initial;
+	overflow-y: initial;
+    margin: -10px 0 10px 0;
+    padding: 0 0 10px 0;
+    width: 220px;
+}
+
+#wic-activity-area .wic-multi-select-label.activity-type {
+	padding-left: 5px;
+	width: 195px;
+}
+
+#show_all_activities {
+	cursor:pointer;
+	color: #006799;
+}
+
+#show_all_activities:hover {
+	color: #0085ba;
+	text-decoration: underline;
+}
+
+#wic_activity_list {
+	margin-top: 0;
+}
+/* activity list on constituent or issue form */
+.activity_list_last_updated_by,
+.activity_list_last_updated_time,
+.activity_list_last_updated_by_show,
+.activity_list_activity_type_show.not-really-show,
+.activity_list_ID,
+.activity_list_constituent_id,
+.activity_list_activity_amount,
+.activity_list_activity_type,
+.activity_list_issue,
+#wic-form-issue .activity_list_issue_show,
+#wic-form-constituent .activity_list_constituent_show,
+#activity-popup.issue-activity-popup #wic-control-issue,
+#activity-popup.constituent-activity-popup #wic-control-constituent-id,
+.activity_list_pro_con,
+.activity_list_activity_note {
+	display: none;
+}
+
+
+
+span.dashicons-edit {
+	cursor:pointer;
+}
+
+span.dashicons-edit:hover{
+	color: #50d03a;
+	font-size: 2em;
+}
+
+/* styling the activity form */
+#activity-popup #post-form-message-box,
+#activity-popup #wic-inner-field-group-activity-toggle-button{
+	display: none;
+}
+
+#activity-popup #wic-form-main-groups {
+	width: 100%;
+}
+
+#activity-popup #wic-form-sidebar-groups {
+	display: none;
+}
+
+
+#activity-popup label.wic-label {
+	min-width: 12.444444%;
+	margin-right: 1.777777%;
+}
+
+/* 11 px is wordpress form padding and margin left */
+#activity-popup #activity_note,
+#activity-popup .wic-selectmenu-wrapper.issue,
+#activity-popup .wic-selectmenu-wrapper.constituent-id {
+	width: calc(83.777777% - 11px);
+	margin-right: 2%;
+}
+
+#reassign_activities_dialog .dashicons.dashicons-filter,
+#delete_activities_dialog .dashicons.dashicons-filter {
+ 	color: #FFD700;
+}
+
+#activity-popup #activity_note {
+	height: 250px;
+}
+
+#activity-popup #activity_date,
+#activity-popup #activity_amount,
+#activity-popup #activity_type,
+#activity-popup #pro_con {
+	width: 28.5926%
+} 
+
+.activity-form-good-news .ui-dialog-title {
+	color:  green;
+}		
+
+.activity-error-alert .ui-dialog-title {
+	color: red;
+}
+#frozen_activity_note_display{
+	display: none;
+	border: 1px solid #ccc;
+	padding: 10px;
+	width: calc(83.777777% - 11px);
+	overflow-x: scroll;
+}
+
+#reassign_activities_dialog label.wic-label.issue {
+	display: none;
+}
+
+#reassign_activities_dialog .wic-input.issue {
+	width: 100%;
+}
+
+.show-original-message-wrapper {
+	width: 100%;
+	border-top: solid 1px #ccc;
+	padding-top: 20px;
+}
+
+.show-original-message-wrapper .message-ID {
+	display: none;
+}
+
+button.show-original-message {
+	border: none;
+	background: none;
+	width: auto;
+	color: #0073aa;
+	font-weight: normal;
+	text-decoration: underline;
+}
+
+button.show-original-message:hover {
+	border: none;
+	background: none;
+	width: auto;
+	font-weight: normal;
+	color: #0073aa;
+}
+
+
+
+@media only screen and (max-width: 960px) {
+	#wic-activity-area #upload-document-button,
+	#wic-activity-area #delete_activities_button,
+	#wic-activity-area #reassign_activities_button,
+	#download-activities-form-button,
+	#filter-activities-button,
+	#add-new-activity-button {
+		margin: 0 .8888% 10px 0%;
+		padding: 0;
+		text-align: middle;
+		vertical-align: bottom;
+		width: 5.530%;
+		display: inline-block;
+	}
+}

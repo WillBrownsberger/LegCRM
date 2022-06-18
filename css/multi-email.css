@@ -1,0 +1,45 @@
+/*
+* css supporting the multi email control
+*
+*/
+.constituent-email-item {
+	background: #f6f6f6;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	font-weight: 400;
+	display: inline;
+	float: left;
+	width: auto;
+	padding: 3px;
+	margin: 3px;
+	cursor: pointer;
+}
+
+.constituent-email-item.bad-email-address {
+	background: #cc3333;
+	color: white;
+}
+
+.constituent-email-item.found-email-address {
+	font-weight: bold;
+}
+
+#wic-inbox-work-area #envelope-edit-wrapper #message_subject.wic-input.message-subject {
+} 
+
+.multi-email-wrapper {
+	border: 1px solid #ccc;
+	background: #fff;
+	overflow: auto;
+	width: 100%;
+}
+
+#envelope-edit-wrapper input.wic-input.constituent-email.wic-autocomplete,
+input.wic-input.constituent-email.wic-autocomplete {
+	width: 200px;
+	height: 28px;
+	margin: 3px 1px;
+	float: left;
+	border: none;
+}  
+

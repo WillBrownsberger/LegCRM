@@ -1,0 +1,73 @@
+/*
+*
+* Additional styling for issues forms
+*
+*/
+#wic-form-issue #wic-field-group-issue_content,
+#wic-form-issue #wic-field-group-activity {
+	margin-top: 0;
+}
+
+.wic-input.post-title,
+.wic-input.post-content,
+#wic-post-content-visible,
+.wic-input.tags-input,
+#wic-form-issue #wic-control-post-category  div.wic_multi_select,
+.wic-input.wic-live-issue {
+	width: 83.55555%;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+
+}
+
+/* styling for displayed post text */
+#wic-post-content-visible {
+	border: solid 1px #ddd;
+	padding: 3px 5px;
+	height: 300px;
+	margin: 0 0 20px 14.222222%;
+	overflow-y: scroll;
+}
+
+.wic-input.post-content {
+	height: 200px;
+}
+
+#wic-issue-post-edit-link {
+	display: inline-block;
+}
+
+#wic-issue-delete-button {
+	color: red;
+	margin-left: 14.222%;
+	width: 26.66666%;
+}
+
+#wic-issue-delete-button:hover {
+	color: #FFD700;
+}
+
+#issue_delete_shell {
+	display: none;
+}
+
+@media only screen and (max-width: 960px) {
+
+	.wic-input.post-title,
+	.wic-input.post-content,
+	#wic-post-content-visible,
+	.wic-input.tags-input,
+	#wic-form-issue #wic-control-post-category div.wic_multi_select,
+	.wic-input.wic-live-issue {
+		margin: 0 .88888% 0 .88888%;
+		width: 98.2222%;
+	}
+
+	div.wic_multi_select {
+		height: initial;
+		max-height: 300px;
+	}
+
+
+}

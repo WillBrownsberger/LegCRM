@@ -1,0 +1,146 @@
+/* styling for wic-selectmenu and wic autocomplete controls */
+
+.wic-selectmenu-wrapper {
+	cursor: pointer;
+	margin: 0 1.777777% 0 0;
+	position: relative;
+	display: inline-block;	
+	vertical-align: top;
+	width: 26.666666666%;
+	overflow-x: visible;
+}
+
+.wic-selectmenu-input-wrapper {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	box-shadow: none;
+	-webkit-box-shadow: none;
+	border: 1px solid #ddd;
+	background: #f0f0f0;	
+	width: 100%;
+}
+
+
+.wic-selectmenu-input-display {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	border: none;
+	border-right: 1px solid #ddd;
+	margin: 0;
+	width: calc( 100% - 20px );
+}
+
+input[type="text"].wic-selectmenu-input-display:focus {
+	box-shadow: none;
+}
+
+input[type="text"].wic-selectmenu-input-display-readonly {
+	border: none;
+	margin: 0;
+	width: calc( 100% );
+}
+
+.wic-selectmenu-additional-values-source,
+.wic-selectmenu-input {
+	display: none;
+}
+
+/* this styling used for autocomplete menu */
+.wic-selectmenu-options-layer {
+	box-sizing: border-box;
+	box-shadow: 0 0 2px rgba( 30, 140, 190, 0.8 );	
+	border: 1px solid #ddd;
+	border-color: #5b9dd9;
+	background-color: #fff;
+	cursor: pointer;
+	display: none;
+	font-size: 14px;
+	left: 0;
+	line-height: 18px;
+	margin: 0;
+	max-width: calc(50vw - 120px );
+	padding: 0;
+	position: absolute;
+	top: 0;
+	z-index: 100;
+}
+/* min-width only applicable to true selectmenu */
+.wic-selectmenu-wrapper .wic-selectmenu-options-layer {
+	min-width: 100%;
+} 
+
+/* show max of 8 items by default */
+ul.wic-selectmenu-dropdown-values {
+	max-height: 176px;
+	overflow-y: scroll;
+	margin: 0;
+	padding: 0;
+}
+
+#wic-top-level-form ul.wic-selectmenu-dropdown-values {
+	max-height: calc(100vh - 300px );
+} 
+
+.wic-selectmenu-options-layer.active-selectmenu {
+	display: block;
+}
+
+li.wic-selectmenu-list-entry,
+li.wic-selectmenu-list-entry ul {
+	min-height: 22px;
+	min-width: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+li.wic-selectmenu-list-entry-label {
+	margin: 0;
+	padding: 3px 0 1px 5px;
+	white-space: nowrap;
+}
+
+.wic-selectmenu-list-entry {
+	background: white;
+	color: #32373c;
+}
+
+.wic-selectmenu-list-entry.filtered {
+	display: none;
+}
+
+.wic-selectmenu-list-entry.wic-selected {
+	color: white;
+  	background: #2ea2cc url("jquery-ui-1.11.4.custom/images/ui-bg_highlight-soft_25_2ea2cc_1x100.png") repeat-x scroll 50% 50%;
+}
+
+.wic-selectmenu-list-entry-value {
+	display: none;
+}
+.wic-selectmenu-additional-down-values {}
+
+.wic-selectmenu-input-wrapper .dashicons.dashicons-arrow-down {
+	color: #777;
+	background: #f0f0f0;
+	vertical-align: middle;
+}
+.wic-selectmenu-list-entry-email-name,
+.wic-selectmenu-list-entry-latest-email-address,
+.wic-selectmenu-list-entry-type {
+	display: none;
+}
+
+.flash {
+   animation-name: flash;
+    animation-duration: 0.2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-play-state: running;
+}
+
+@keyframes flash {
+    from {color: #777;}
+    to {color: #aaa;}
+}

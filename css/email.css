@@ -1,0 +1,1439 @@
+/*
+*
+* email inbox styling
+*
+*
+*/
+
+#send_email_to_found_button,
+.wic-form-button.email-action-button.email-compose-button,
+#wic_email_access_button {
+	border: 1px solid #b3d9ff;
+	color:  #0066cc;
+	background: #e6f2ff;
+}
+#send_email_to_found_button:hover,
+.wic-form-button.email-action-button.email-compose-button:hover,
+#wic_email_access_button.wic-form-button-selected,
+#wic_email_access_button:hover {
+	border-color: #66b3ff;
+	background: #b3d9ff;
+	color: #0066cc;
+}
+
+#wic_email_access_button.wic-form-button.wic-form-button-selected span.dashicons {
+	color: #0066cc;
+}
+
+#wic_email_access_button {
+	margin-left: 0;
+}
+
+/* overall container for all of inbox pages, ex message reviews */
+#wic-email-inbox {
+	background: #fff;
+	width: 100%;
+	position: relative;
+}
+
+/* container for message reviews; made visible by js; positioned vs. wp-issues-crm */
+#wic-inbox-message-review {
+	visibility: hidden;
+	position: absolute;
+	border: 1px solid #ccc;
+	top: 10px;
+	left: 0;
+	width: 100%;
+	background: white;
+	z-index: 2;
+}
+
+/* 
+*  giving the swapped inbox containers height reduces screen jump (contents fill them out) 
+*  having them at all allows instantly available stable content while awaiting main content 
+*/
+.wic-email-inbox-content {
+	height: calc(100vh - 350px );
+	overflow: hidden;
+	display: none;
+	width: calc( 100% - 120px);
+	float: left;
+}
+
+#wic-email-inbox-controls {
+	border-right: 1px solid #ccc;
+	height: calc(100vh - 350px );
+	overflow: hidden;
+	width: 120px;
+	float: left;
+}
+
+
+/* giving the inner containers height makes them scrollable independently of header */
+.wic-email-area-inner-wrapper  {
+	height: calc(100vh - 350px);
+	overflow-y: scroll;
+}
+/* these two inner containers need to leave room for the buttons above them */
+#wic-load-outbox-inner-wrapper,
+#subject-list-inner-wrapper {
+	height: calc(100vh - 388px);
+}
+
+/* subject list inner wrapper should scroll */
+#subject-list-inner-wrapper {
+	overflow-y: scroll;
+}
+
+
+/* altered inbox frames with showing-email class */
+/* overall container for all of inbox pages, ex message reviews */
+.showing-email  #wic-email-inbox {
+	background: #fff;
+	width: 100%;
+	position: absolute;
+	border: 1px solid #0066cc;
+	left: 0;
+	top: 0;
+	z-index: 1;
+}
+
+/* container for message reviews; made visible by js; positioned vs. wp-issues-crm */
+.showing-email  #wic-inbox-message-review {
+	border: 1px solid #0066cc;
+}
+
+/* 
+*  giving the swapped inbox containers height reduces screen jump (contents fill them out) 
+*  having them at all allows instantly available stable content while awaiting main content 
+*/
+.showing-email  .wic-email-inbox-content {
+	height: calc(100vh - 140px );
+}
+
+.showing-email  #wic-email-inbox-controls {
+	height: calc(100vh - 140px );
+}
+/* giving the inner containers height makes them scrollable independently of header */
+.showing-email .wic-email-area-inner-wrapper  {
+	height: calc(100vh - 178px);
+	overflow-y: scroll;
+}
+/* these two inner containers need to leave room for the buttons above them */
+.showing-email #wic-load-outbox-inner-wrapper,
+.showing-email #subject-list-inner-wrapper {
+	height: calc(100vh - 178px);
+}
+
+/* half screen columns within review mode */
+#wic-inbox-detail-wrapper,
+#wic-inbox-work-area {
+	background: #fff;
+	float: left;
+	height: calc( 100vh - 150px );
+	width: 50%;
+}
+
+/* elements of wic-inbox-detail-wrapper */
+#wic-message-sender-header{
+	border-bottom: 1px solid #ccc;
+	height: 50px;
+	padding: 10px;
+	width: 100%;
+}
+#scrollable-incoming-message-content {
+	height: calc( 100vh - 250px );
+	overflow-y: scroll;
+}
+#wic-inbox-detail-wrapper {
+	border-right: 1px solid #ccc;
+}
+/* elements of scrollable-incoming-message-content*/
+#recipients-display-line {
+	padding: 10px;
+}
+
+#attachments-display-line {
+	padding: 0 10px;
+	width: 100%;
+}
+
+.document-link-button{
+	border: none;
+	box-shadow: none;
+	-webkit-box-shadow: none;
+	background: none;
+	color: #333;
+	cursor: pointer;
+	margin: 0;
+	padding: 0;
+	text-decoration: underline;
+}
+
+
+#to-from-reply-table td {
+	vertical-align: top;
+}
+#inbox_message_text {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	background: #fff;
+	box-sizing: border-box;
+	border-top: 1px solid #ccc;
+	color: #333;
+	padding: 10px 60px;
+	width: 100%;
+}
+
+/* elements of inbox work area */
+#issue-definition-wrapper {
+	border-bottom: 1px solid #ccc;
+	font-weight: normal;
+	height: 50px;
+	padding: 10px;
+	width: 100%;
+}
+
+#envelope-edit-wrapper {
+	background: #f6f6f6;
+	font-weight: normal;
+	height: 250px;
+	overflow-y: scroll;
+	padding: 10px;
+	width: 100%;
+}
+
+.envelope-edit-wrapper table {
+	table-layout: auto; 
+	width: 100%;
+}
+.envelope-edit-wrapper td {
+	vertical-align: top;
+}
+
+.envelope-edit-wrapper input[type="text"].wic-input{
+	width: 100%;
+}
+.multi-line-warning-legend,
+#multi-line-warning-legend {
+	font-style: italic;
+	font-size: 0.8em;
+	color: #777;
+}
+
+#reply-template-wrapper {
+	width: calc( 100% - 2px );
+}
+
+.wic-label.working-template {
+	display: none;
+}
+#wic-inbox-work-area #working_template.wic-input {
+	height: calc(100vh - 521px);
+}
+
+
+#wic-email-inbox-header #wic-email-compose-button.wic-form-button {
+	display: inline-block;
+	margin: 0 0 0 .888888%;
+	width: 5.33333%;
+}
+
+
+#wic-email-subject-header,
+#wic-email-inbox-header {
+	padding: 10px 0;
+	width: 100%;
+	border-bottom: 1px solid #ccc;
+}
+
+#issue-definition-wrapper .wic-form-button,
+#wic-message-sender-header .wic-form-button,
+#wic-email-subject-header .wic-form-button,
+#wic-email-inbox-header .wic-form-button {
+	box-sizing: border-box;
+	width: 30px;
+	margin: 0 0 0 10px
+}
+
+#wic-email-inbox-header #wic-filter-assigned-button,
+#wic-email-inbox-header .wic-form-button.page-link  {
+	margin: 0 10px 0 0;
+}
+
+
+#wic-inbox-title-legend {
+	overflow-x: hidden;
+	vertical-align: middle;
+	white-space:nowrap;
+	width: calc(98.88888% - 6.22222% - 510px);
+}
+
+.wic-page-option-list {
+	display: inline-block;
+	margin: 10px 0 10px 5.92592%;
+	width: 88%;
+}
+
+.wic-inbox-page-list-item {
+	font-size: 1.2em;
+	padding: 3px;
+	margin: 0;
+	width: 100%;
+	color: #0066cc;
+	border: 1px solid #fafafa;
+	border-radius: 3px;
+}
+
+.wic-inbox-page-list-item:hover {
+  	background: #0066cc;
+	color: #ffffff;
+	border: 1px solid #0066cc;
+    font-weight: bold;
+
+}
+
+.wic-inbox-page-list-item.wic-active-inbox-page {
+	font-weight: 600;
+	color: #0059b3;
+}
+
+.wic-inbox-page-list-item.wic-active-inbox-page:hover {
+	font-weight: 600;
+	color: #fff;
+}
+
+
+.wic-inbox-page-value {
+	display: none;
+}
+
+#wic-inbox-title-alt-legend {
+	width: calc(98.8888% - 6.22222% - 30px);
+}
+
+
+#wic-inbox-title-legend,
+#wic-inbox-title-alt-legend {
+	background: none;
+	color: #0066cc;
+}
+
+.mce-reset .mce-btn .mce-txt {
+	color: #595959;
+}
+.wic-input.compose-subject {
+	height: 28px;
+	margin: 3px 1px;
+}
+
+#wic-message-subject {
+	padding: 0 10px;
+	color: #555;
+	font-weight: normal;
+	font-size: 1.2em;
+	display: inline-block;
+	width: calc(90% - 296px);
+	overflow-x: hidden;
+	vertical-align: middle;
+	white-space:nowrap;
+}
+
+
+#wic-message-subject-line-position {
+	font-size: 0.9em;
+	font-style: italic;
+}
+
+
+#wic-message-sender,
+#wic-message-sender-constituent {
+	display: inline-block;
+}
+
+#wic-message-sender-name,
+#wic-message-scroll-tracker {
+	display: inline;
+}
+
+#wic-message-sender {
+	width: calc(50% - 50px );
+	margin-right: 10px;
+	white-space:nowrap;
+	overflow-x: hidden;
+  	text-overflow: ellipsis;
+}
+
+#wic-message-sender-header .scroll-button.wic-form-button {
+	vertical-align: top;
+}
+
+#wic-message-sender-header #parse-popup-button.wic-form-button {
+	margin: 0 10px 0 0;
+	vertical-align: top;
+}
+
+#wic-message-sender-name {
+	font-size: 1.1em;
+	font-weight: bold;
+	color: #333;
+}
+#wic-message-scroll-tracker {
+	font-weight: normal;
+	font-style: italic;
+	font-size: 0.9em;
+	color: #555;
+}
+#wic-message-sender-constituent {
+	width: calc(50% - 120px);
+	vertical-align: top;
+}
+
+#assigned-constituent-form #constituent_id {
+	display: none;
+}
+
+#message-sender-position {
+	font-weight: normal;
+	color: #555;
+	font-size: 0.9em;
+	font-style: italic;
+}
+
+.wic-dashboard-title.inbox-legend:hover {
+	background: #f6f6f6 url("jquery-ui-1.11.4.custom/images/ui-bg_highlight-soft_100_f6f6f6_1x100.png") repeat-x scroll 50% 50%;
+    border: none;
+    color: #999;
+}
+
+#wic-email-inbox #subject {
+	width: 200px;
+    height: 28px;
+	margin: 0;
+	padding: 0;
+}
+
+#wic-email-inbox-header .wic-form-button.email-action-button {
+	color: #0066cc;
+}
+
+#wic-email-inbox-header .wic-form-button.email-action-button.inbox-mode-button {
+	color: #0066cc;
+	font-style:italic;
+}
+
+.wic-form-button.email-action-button:hover,
+.email-bulk-action-button.wic-form-button:hover,
+#wic-email-inbox-header .wic-form-button.email-action-button:hover,
+#wic-inbox-sweep-button.wic-form-button.email-action-button:hover,
+#wic-email-inbox-header .wic-form-button.email-action-button.inbox-mode-button:hover {
+	background: #0066cc;
+	color: #fff;
+	border-color: #0066cc;
+}
+
+.email-bulk-action-button,
+#left-message-scroll,
+#right-message-scroll,
+.email-action-button {
+	width: 30px;
+}
+
+#wic-email-record-reply-button.email-action-button {
+	width: calc( 10% - 4px) ;
+}
+
+#inbox-congrats {
+	padding: 60px;
+	color: #777;
+}
+
+#inbox-congrats h1 {
+	color: green;
+}
+
+#reply-edit-mode {
+	display: none;
+}
+
+
+#wic-inbox-refresh-button {
+	border-right: 1px dotted #ccc;
+}
+li.wic-oauth-background,
+p.wic-oauth-background {
+	font-size: 0.8em;
+}
+
+p.wic-oauth-warning {
+	color: #a66;
+	font-style: italic;
+	font-size: 1em;
+}
+
+p.wic-oauth-gtg {
+	color: green;
+	font-size: 1.2em;
+}
+
+ul.wic-oath-connect-error-details {
+	list-style: disc inside;
+}
+
+
+ul.wic-oath-connect-error-details li {
+	font-size: 0.8em;
+	margin: 0 0 0 10px;
+}
+ul.wic-oath-connect-error-subdetails {
+	list-style: square inside;
+}
+
+ul.wic-oath-connect-error-subdetails li {
+	margin: 0 0 0 20px;
+	font-size: 1em;
+}
+
+
+#wic-form-email-settings .wic_save_email_settings,
+#wic_save_current_user_sig,
+#wic_disconnect_from_gmail,
+#wic_connect_to_gmail {
+	width: 300px;
+	margin: 20px 0 10px 0;
+}
+
+
+.wic_save_email_settings.wic-form-button.wic-button-unsaved,
+#wic_save_current_user_sig.wic-form-button.wic-button-unsaved {
+	color: red;
+}
+.wic_save_email_settings.wic-form-button.wic-button-unsaved:hover,
+#wic_save_current_user_sig.wic-form-button.wic-button-unsaved:hover {
+	color: white;
+}
+
+#wic-inbox-form-tabbed,
+#wic-form-email-settings #wic-form-tabbed {
+	background: #fff;
+	padding: 0;
+}
+
+#wic-inbox-form-tabbed  .ui-tabs-nav,
+#wic-form-email-settings #wic-form-tabbed .ui-tabs-nav {
+	padding: 0;
+}
+
+#wic-inbox-form-tabbed  .ui-state-default.ui-corner-top.empty-category-tab a,
+#wic-inbox-form-tabbed  .ui-state-default.ui-corner-top.assignment-category-tab a {
+	color: #777;
+	font-weight: 400;
+}
+
+h3.all-clear-inbox-message {
+	margin: 40px;
+	color: green;
+}
+
+.light-dashicon {
+	color: #dfdfdf;
+}
+
+.wic-inbox-tab-count {
+	background: #fafafa;
+	padding: 2px 6px;
+}
+
+#wic-form-email-settings #bottom-button-group {
+	min-height: 0px;
+}
+#wic-form-email-settings #post-form-message-box {
+	margin: 0 7.11111%;
+}
+
+#purge-queue-email-button,
+#add-new-subject-button {
+	margin-bottom: 10px;
+	margin-top: 10px;
+}
+
+
+.inbox-wrapper {
+	display: block;
+	width: 100%;
+}
+
+#inbox-top-line-with-controls-and-tabs {
+	height: 38px;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	border-bottom: 1px solid #eee;
+}
+
+#bulk-block-delete-controls {
+	padding: 5px 3px 5px 0;
+	margin: 0 5px 0 0;
+	display: inline-block;
+	height: 38px;
+	width: 110px;
+}
+
+#wic-email-bulk-delete-button {
+	margin: 0;
+}
+#wic-email-bulk-block-button {
+	margin: 0 0 0 10px;
+}
+
+
+
+li.inbox-subject-line {
+	width: 100%;
+	padding: 0;
+	margin: 0;
+	color: #333;
+	font-size: 13px;
+	font-weight: 400;
+	line-height: 28px;
+	height: 28px;
+	border: none;
+	border-radius: 0;
+	border-top: 1px solid #eee;
+}
+
+li.inbox-subject-line.inbox-subject-line-selected {
+	background: #dfdfff;
+}
+
+ul#inbox-subject-list li:last-of-type {
+	border-bottom: 1px solid #eee;
+}
+ul#inbox-subject-list li:first-of-type {
+	border-top: none;
+}
+
+ul.inbox-subject-line-inner-list {
+	margin-top: 5px;
+	padding: 0 0 0 0;
+	line-height: 16px;
+	text-align: left;
+	display: inline-block;
+	width: calc( 100% - 30px);
+}
+
+.inbox-master-checkbox-wrapper,
+.inbox-subject-line-checkbox-wrapper {
+	margin: 0;
+	padding: 0;
+	width: 30px;
+	text-align: left;
+	padding: 0 0 0 3px;
+	display: inline-block;
+}
+
+.inbox-subject-line:hover,
+.inbox-subject-line:hover .subject-line-item.from-summary.includes-constituents,
+.inbox-subject-line.inbox-subject-line-selected:hover {
+	color: white;
+	background: #0066cc;
+}
+
+li.subject-line-item {
+	border: none;
+	overflow-x: hidden;
+	white-space: nowrap;
+	display: inline-block;
+	margin: 0 0.5% 0 0;
+	text-align: left;
+	padding: 0;
+}
+
+li.inbox-subject-line.item-sending li.subject-line-item.subject {
+	color: red;
+	font-style: italic;
+}
+
+.subject-line-item.account_thread_id {
+	display: none;
+}
+
+.subject-line-item.from-summary {
+	width: 230px;
+}
+
+.subject-line-item.from-summary.includes-constituents {
+	color: #0066cc; 
+}
+
+.subject-line-item.subject {
+	width: calc(98.5% - 375px );
+}
+
+.subject-line-item.subject.trained-subject {
+	font-style: italic;
+	font-weight: 700;
+}
+
+.subject-line-item.subject.inbox-assigned-staff {
+	font-weight: 700;
+	color: green;
+}
+
+
+
+
+.subject-line-item.count {
+	display: none;
+}
+
+#wic-email-saved-content .subject-line-item.subject {
+	width: calc(98.5% - 145px );
+}
+
+
+.subject-line-item.oldest {
+	width:	145px;
+	margin: 0;
+}
+
+.subject-line-item.reply-ID,
+.subject-line-item.pro-con-value,
+.subject-line-item.message-ID,
+.subject-line-item.mapped_pro_con,
+.subject-line-item.from-email,
+.subject-line-item.from-domain,
+.subject-line-item.UIDs {
+	display: none;
+}
+
+#filtered-all-warning {
+	font-style: italic;
+	color: red;
+	font-weight: 400;
+	font-size: 1em;
+	margin: 20px;
+}
+
+button.wic-form-button.message-scroll {
+	width: 30px;
+}
+
+
+#wic-message-sender-constituent  .wic-selectmenu-wrapper,  
+#wic-inbox-work-area .wic-input {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	font-weight: normal;
+	height: 28px;
+	margin: 0;
+	padding: 0 10px;
+	text-align: left;
+	width: 100%;
+}
+
+#wic-message-sender-constituent  .wic-selectmenu-wrapper{
+	padding: 0;
+}
+
+#wic-message-sender-constituent .wic-label.constituent-id,
+#wic-inbox-work-area .wic-label.pro-con,
+#wic-inbox-work-area #issue_view_area {
+	display: none;
+}
+
+#wic-inbox-work-area .wic-selectmenu-wrapper.issue {
+	width: calc(80% - 90px);
+	padding: 0;
+}
+#link_to_edit {
+	margin: 0;
+}
+/* show 12 items */
+#wic-inbox-work-area ul.wic-selectmenu-dropdown-values {
+	max-height: 262px;
+}
+
+
+#wic-inbox-work-area .wic-selectmenu-wrapper.pro-con {
+	width: 20%;
+	display: inline-block;
+	padding: 0;
+	margin-left: 10px;
+}
+
+#assigned-case-popup-button,
+.inbox_issue_link_wrapper,
+#diagnostics-popup-button,
+#view-issue-button {
+	vertical-align: top;
+	margin-left: 10px;
+}
+
+.inbox_issue_link_wrapper {
+	display: inline-block;
+	width: 30px;
+}
+
+.inbox_issue_link_wrapper .wic-form-button.email-action-button {
+	margin: 0;
+}
+#edit_mapped_issue_link {
+	margin: 0;
+	width: 30px;
+}
+
+.working-template-button.email-action-button.wic-form-button {
+	margin: 0;
+}
+.working-template-button.email-action-button.wic-form-button:last-of-type {
+	margin-left: 5px;
+}
+
+#wic-inbox-record-button,
+#wic-inbox-reply-button {
+	margin: 0;
+	width: 27.5%;
+}
+
+.wic-button-table-header {
+	height: 39px;
+}
+
+
+#wic-inbox-reply-button {
+	margin-left: 1.72%;
+}
+
+/*
+* message detail materials
+*/
+
+#inbox_message_analysis {
+	padding: 0;
+	border-top: 1px solid #ccc;
+}
+
+.inbox_message_details {
+	width: 100%;
+	margin: 10px 0 0 0;
+	padding: 0;
+}
+
+table.inbox_message_details.wp-issues-crm-stats,
+table.inbox_message_details.wp-issues-crm-stats tr,
+table.inbox_message_details.wp-issues-crm-stats td {
+	border: none;
+}
+table.inbox_message_details.wp-issues-crm-stats td {
+	border-bottom: 1px solid #eaeaea;
+}
+table.inbox_message_details.wp-issues-crm-stats {
+	border-collapse: collapse;
+}
+
+table.inbox_message_details.wp-issues-crm-stats tr.heavy-bottom-border td {
+	border-bottom: black 2px solid;
+}
+
+
+.inbox_message_details.wp-issues-crm-stats td:first-child {
+	width: 25%;
+	font-style: italic;
+}
+
+#wic-inbox-list-footer {
+	border-top: 1px solid #ccc;
+	padding: 10px;
+	text-align: center;
+	width: 100%
+}
+
+
+
+/*
+*
+* email form styling
+*
+*/
+#wic-email-receive-test-button,
+#wic-email-send-test-button {
+	background: #00AA73;
+}
+
+#wic-email-receive-test-button,
+#wic-email-send-test-button:hover {
+	background: #00cc73;
+}
+
+
+#email_imap_server,
+#user_name_for_email_imap_interface,
+#email_smtp_server,
+#smtp_password,
+#smtp_user,
+#from_name,
+#from_email,
+#smtp_reply,
+#reply_name,
+#test-email-address {
+	width: 300px;
+}
+
+#max_send_email {
+	width: 40px;
+}
+
+#email_smtp_interface select {
+	width: 600px;
+}
+
+.input-line-height-echo {
+	line-height: 25px;
+}
+
+
+#search_subjects_phrase {
+	margin-top: 10px;
+	margin-left: .8888%;
+	margin-right: 0;
+	width: 42.66666%;
+}
+
+.wic-inbox-legend {
+	margin: 10px 0.88888%;
+	font-style: italic;
+	font-size: 0.8em;
+}
+
+#inbox-ajax-loader {
+	margin: 20px 0.888888%;
+}
+
+#clear-reservation-queue-button {
+	width: 200px;
+	margin: 20px 0;
+}
+
+/****************************************************************
+* email processing  form styling 
+*
+******************************************************************/
+#wic_true_outgoing_email_count {
+	display: none;
+}
+
+#unconfigured-message-for-process-email {
+	background: #fff;
+	color: #333;
+	padding: 20px;
+	margin: 10px;
+	border: 1px solid #0077a3	;
+
+}
+
+#unconfigured-message-for-process-email p {
+	font-size: 1.2em;
+}
+
+#unconfigured-message-for-process-email ul {
+	list-style: disc;
+	margin-left: 20px;
+}
+
+td.history-hidden-subject-string {
+	display: none;
+}
+
+
+#wic-form-email-settings {
+   margin-top: 0;
+   padding-top: 0;
+}
+
+#wic-form-email-settings #wic-control-word-minimum-count-threshold .ui-spinner.ui-widget.ui-widget-content.ui-corner-all,
+#wic-form-email-settings #wic-control-word-minimum-threshold .ui-spinner.ui-widget.ui-widget-content.ui-corner-all,
+#wic-form-email-settings #wic-control-unmapped-minimum-threshold .ui-spinner.ui-widget.ui-widget-content.ui-corner-all,
+#wic-form-email-settings #wic-control-mapped-threshold .ui-spinner.ui-widget.ui-widget-content.ui-corner-all,
+#wic-form-email-settings #wic-control-unmapped-threshold .ui-spinner.ui-widget.ui-widget-content.ui-corner-all{
+	margin-left: 0;
+	width: 57px;
+}
+
+#wic-form-email-settings .wic-input.word-minimum-count-threshold.ui-spinner-input,
+#wic-form-email-settings .wic-input.word-minimum-threshold.ui-spinner-input,
+#wic-form-email-settings .wic-input.unmapped-minimum-threshold.ui-spinner-input,
+#wic-form-email-settings .wic-input.mapped-threshold.ui-spinner-input,
+#wic-form-email-settings .wic-input.unmapped-threshold.ui-spinner-input {
+	width: 40px;
+	margin: 0;
+}
+
+
+#wic-form-email-settings th {
+	color: #777;
+}
+
+#wic-form-email-settings .dashicons-no,
+#wic-form-email-settings .dashicons-undo,
+#wic-form-email-settings .dashicons-arrow-down-alt {
+	vertical-align: middle;
+}
+
+#wic-form-email-settings .wic-control {
+	margin-top: 20px;
+}
+
+#wic-form-email-settings label.wic-label,
+#wic-form-email-settings  textarea.wic-input,
+#wic-form-email-settings  .wic-input {
+	text-align: left;
+	width: 100%;
+	margin: 0;
+}
+
+#wic-load-history-wrapper,
+#wic-mail-queue-wrapper,
+#wic-subject-list-wrapper,
+#process-email-button {
+	margin-left: 0.88888%;
+	margin-right: 0.88888%;
+}
+
+#wic-inbox-form-tabbed .ui-tabs-panel,
+#wic-form-tabbed .ui-tabs-panel {
+	padding: 15px 0;
+}
+
+#wic-subject-list-wrapper .wp-issues-crm-stats,
+#wic-mail-queue-wrapper .wp-issues-crm-stats,
+#wic-load-history-wrapper .wp-issues-crm-stats {
+	width: 100%;
+
+}
+
+#wic-form-email-settings #bottom-button-group .wic-form-button {
+	display: none;
+}
+
+
+#wic_reply_editor_legend {
+	width: 100%;
+	padding: 20px;
+	display: block;
+}
+
+#wic_subject_editor_legend{
+	display: none;
+}
+
+#wic-form-email-settings textarea.wic-input {
+	height: 80px;
+}
+
+
+#wic-form-email-settings #wic-form-sidebar-groups .field-group-show-hide-button {
+	margin-top: 0;
+	font-size: 1.2em;
+}
+
+
+.wic-form-button.wic-subject-delete-button,
+.wic-form-button.wic-email-unqueue-button,
+.wic-form-button.wic-email-rollback-button,
+.wic-form-button.wic-delete-block-button {
+	color: #b32d00;
+	width: 100%;
+	max-width: 50px;
+	display: block;	
+	margin: 3px auto;
+}
+
+.wic-form-button.wic-delete-block-button:hover,
+.wic-form-button.wic-subject-delete-button:hover,
+.wic-form-button.wic-email-unqueue-button:hover,
+.wic-form-button.wic-email-rollback-button:hover {
+	color: white;
+}
+
+.wp-issues-crm-stats th.wic-table-buttons,
+.wp-issues-crm-stats td.wic-table-buttons  {
+	text-align: center;
+}
+
+#wic-email-inbox table.wp-issues-crm-stats th {
+	color: #777;
+}
+
+#wic-email-inbox table.wp-issues-crm-stats,
+#wic-email-inbox table.wp-issues-crm-stats th,
+#wic-email-inbox table.wp-issues-crm-stats td {
+	border-style: none;
+	border-collapse: separate;
+}
+ 
+#wic-email-inbox table.wp-issues-crm-stats tr {
+	border-style: none none solid none;
+	border-width: 1px;
+	border-color: #ccc;
+	border-collapse: separate;
+	line-height: 1.4em;
+	overflow-y: hide;
+}
+#wic-email-inbox .wp-issues-crm-stats tr:nth-of-type(odd) {
+	background: #eee;
+}
+
+/* reply popup */
+.reply_list_column {
+	width: 47.5%;
+	max-width: 47.5%;
+	overflow-x: scroll;
+	overflow-y: scroll;	
+}
+
+#batch_reply_approval_form .wic_email_content, 
+#batch_reply_approval_form .wic_reply_html {
+	border: none;
+	width: 100%;
+	max-width: 100%;
+	margin: 0;
+	height: 120px;
+	resize: none;
+	overflow-x: scroll;
+	overflow-y: scroll;
+	font-size: 0.8em;
+	vertical-align: top;
+	word-break: break-all;	
+}
+#wp-issues-crm-reply-dialog td.reply_table_entry {
+	padding: 0;
+}
+#wp-issues-crm-reply-dialog th {
+	font-weight: normal;
+	font-style: italic;
+	font-size: 0.8em;
+}
+#wp-issues-crm-reply-dialog {
+	width: 100%;
+	margin: 10px 0;
+	border-collapse:collapse;
+}
+
+#wp-issues-crm-reply-dialog td,
+#wp-issues-crm-reply-dialog th {
+	border-bottom: 2px solid #aaa; 
+}
+
+#batch_reply_approval_form .reply_header {
+	border: solid 1px #ccc;
+	font-weight: bold;
+	min-width: 100%;
+	margin: 0;
+	height: 30px;
+	resize: none;
+	text-align: center;
+}
+#batch_reply_approval_form .edit_reply_template_button,
+#batch_reply_approval_form .hold_reply_button {
+	float: right;
+	display: block;
+	width: 100%;
+	height: 60px;
+}
+
+#wic-edit-email-template-area,
+#wic-edit-reply-template-area {
+	height: 350px;
+	width: 100%;
+
+}
+#currently_logged_in {
+	margin: 0 0 0 0;
+	font-size: 0.8em;
+	
+}
+
+#wic-form-email-settings #wic-control-email-header.wic-control,
+#wic-form-email-settings #wic-control-signature.wic-control {
+   margin-top: 0;
+}
+
+#wic-form-email-settings .wic-form-field-group {
+	margin: 0 .888888%;
+	max-width: 640px;
+}
+
+#wic-inner-field-group-user_sig {
+	margin: 0;
+	max-width: 100%;
+}
+
+
+#wic-field-group-non_constituent_responder label.non-constituent-response-message,
+#wic-form-email-settings label.wic-label.email-header {
+	margin: 0;
+}
+
+#wic-control-reply-template,
+#wic_email_hidden_constituent_count,
+#wic_email_hidden_search_id,
+#wic_email_editor_legend {
+	display: none;
+}
+
+#wic-edit-email-subject {
+	width: 100%;
+	margin: 10px 0;
+}
+
+#reply-confirm-dialog {
+	padding: 0;
+}
+
+#send_queue_table {
+	width: 100%;
+	border-collapse:collapse;
+}
+
+.compose-message-popup .wic-input.wic-selectmenu-wrapper {
+	width: 100%;
+}
+
+.compose-message-popup .issue.wic-label {
+	display: none;
+}
+
+#compose-envelope-wrapper {
+	margin: 20px 10px 10px 10px;
+	padding-bottom: 10px;
+}
+#compose-content-wrapper {
+	border-top: 1px solid #ccc;
+	padding: 20px 10px;
+}
+
+#compose-content-wrapper #compose_content.wic-input {
+	box-shadow: 0 0 10px rgba( 30, 140, 190, 0.8 );	
+	border: 2px solid #ddd;
+	border-color: #5b9dd9;	
+	height: 350px;
+}
+
+#upload-attachment-button{
+	margin: 0;
+	padding: 0;
+	width: 28px;
+}
+
+.wic-attachment-list-item {
+	margin-top: 5px;
+}
+
+.wic-attachment-list-item .dashicons-dismiss{
+	background: #fff;
+	color: #ccc;	
+}
+
+
+.wic-attachment-list-item .dashicons-dismiss:hover {
+	color: red;	
+}
+
+.wic-attachment-list-item-message_id,
+.wic-attachment-list-item-attachment_id {
+	display: none;
+}
+
+
+#wic-subject-editor-legend .wp-issues-crm-stats {
+	width: 100%;
+}
+
+#new_subject_issue_popup #incoming-subject,
+#new_subject_issue_popup .wic-selectmenu-wrapper {
+	width: 100%;
+	max-width: 600px;
+	margin-top: 10px;
+}
+
+
+
+table#block-list-headers.wp-issues-crm-stats,
+table#inbox-image-headers.wp-issues-crm-stats {
+	border-top: 1px solid #ccc;
+	margin: 0;
+	table-layout: fixed;
+  	width: 100%;
+  	white-space: nowrap;
+}
+
+
+#blocks-scroll-box table.wp-issues-crm-stats,
+#inbox-image-scroll-box table.wp-issues-crm-stats {
+	table-layout: fixed;
+  	width: 100%;
+  	white-space: nowrap;
+}
+
+table#block-list-headers.wp-issues-crm-stats th.wic-statistic-text,
+table#inbox-image-headers.wp-issues-crm-stats th.wic-statistic-text,
+#blocks-scroll-box table.wp-issues-crm-stats td.wic-statistic-text,
+#inbox-image-scroll-box table.wp-issues-crm-stats td.wic-statistic-text  {
+  	white-space: nowrap;
+  	overflow: hidden;
+  	text-overflow: ellipsis;
+}
+
+
+#wic-load-blocks-inner-wrapper tr.redrow td.wic-statistic-text {
+	color: red;
+}
+
+
+#inbox-image-scroll-box {
+	height: 40vh;
+	height: calc(100vh - 850px);
+	overflow-y: scroll;
+}
+
+
+p.domain-blocked-legend {
+	color: red;
+	padding: 10px;
+}
+
+#hidden-staff-assignment-control {
+	display: none;
+}
+
+#staff_assignment_popup .wic-selectmenu-wrapper.wic-input.case-assigned {
+	display: block;
+	margin: 10px 0;
+	height: 30px;
+	width: 100%;
+}
+
+.staff_assignment_popup-legend {
+	margin-top: 200px;
+}
+
+#reply-help-sidebar {
+	display: none;
+}
+.mce-container #reply-help-sidebar.wic-mce-sidebar {
+	display: block;
+	padding: 3px;
+}
+
+.mce-container .wic-mce-sidebar ol,
+.mce-container .wic-mce-sidebar li,
+.mce-container .wic-mce-sidebar em,
+.mce-container .wic-mce-sidebar p,
+.mce-container .wic-mce-sidebar div {
+	width: 100%;
+	white-space: normal;
+}
+.mce-container .wic-mce-sidebar-section {
+	margin: 5px 0 15px 0;
+} 
+
+.mce-container .wic-mce-sidebar ol {
+ 	list-style-position: inside;	
+}
+
+.mce-container .wic-mce-sidebar strong {
+	font-weight: 700;
+}
+
+.mce-container .dashicons,
+.mce-container .dashicons-before:before {
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	font-size: 20px;
+	line-height: 1;
+	font-family: dashicons;
+	text-decoration: inherit;
+	font-weight: normal;
+	font-style: normal;
+	vertical-align: top;
+	text-align: center;
+	-webkit-transition: color .1s ease-in 0;
+	transition: color .1s ease-in 0;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.ui-dialog.ui-widget.ui-widget-content.ui-corner-all.ui-front.wic-undo-popup.ui-draggable.ui-resizable {
+	background: #ffc;
+	cursor: pointer;
+	padding: 0;
+}
+#undo-message-button  { 
+	text-align: center;
+}
+.wic-undo-popup .ui-dialog-titlebar.ui-widget-header.ui-corner-all.ui-helper-clearfix.ui-draggable-handle {
+	display: none;
+}
+
+#msg_attachments_list a {
+	font-size: 13px;
+}
+
+#reply-template-wrapper .mce-panel {
+	border-left: none;
+	border-right: none;
+}
+
+.mce-container-body.mce-flow-layout {
+	background: #f6f6f6;
+}
+
+.mce-widget.mce-btn {
+	background: #f6f6f6 url("jquery-ui-1.11.4.custom/images/ui-bg_highlight-soft_100_f6f6f6_1x100.png") repeat-x scroll 50% 50%;
+    border: 1px solid #ddd;
+	border-radius: 3px;
+}
+
+.mce-widget.mce-btn:hover {
+  	background: #0066cc;
+    border: 1px solid #0066cc;
+    color: #fff;
+    font-weight: bold;
+}
+.mce-widget.mce-btn:hover .mce-ico,
+.mce-widget.mce-btn:hover .mce-txt {
+	color: #fff;
+}
+
+.mce-widget .mce-ico.mce-i-save.highlight-tinymce-button,
+.mce-widget .mce-ico.mce-i-restoredraft.highlight-tinymce-button {
+   animation-name: flash-button;
+    animation-duration: 0.5s;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-play-state: running;
+}
+
+
+
+@keyframes flash-button {
+    from {color: #353;}
+    to {color: #0f0;}
+}
+.save-reply-confirm .save-reply-confirm-item {
+	display: inline-block;
+	width: 75%;
+	vertical-align: top;
+}
+.save-reply-confirm .save-reply-confirm-item.caption{
+	width: 20%;
+}
+
+#wic_popup_template_view {
+	height: 600px;
+	width: 100%;
+}

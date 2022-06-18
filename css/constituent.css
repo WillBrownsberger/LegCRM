@@ -1,0 +1,231 @@
+/*
+*
+* Styling for constituent form
+*
+*
+*/
+
+#wic-form-constituent #wic-field-group-activity,
+#wic-form-constituent #wic-field-group-contact {
+	margin-top: 0;
+}
+#wic-control-first-name,
+#wic-control-middle-name,
+#wic-control-last-name {
+	margin: 0 1.777777% 0 0;
+	width: 26.666666666%;
+	display: inline-block;
+}
+
+.wic-input.salutation {
+	margin: 0 1.777777% 0 0;
+	width: 55.11111111%;
+	display: inline-block;
+} 
+
+#confirm_constituent_action {
+	width: 100%;
+}
+
+#wic-control-first-name {
+	margin-bottom: 20px;
+	margin-left: 14.222222%;
+}
+
+#wic-form-constituent .wic-input.first-name,
+#wic-form-constituent .wic-input.last-name,
+#wic-form-constituent .wic-input.middle-name { 
+	margin: 0;
+	width: 100%;
+}
+
+/* standardize drop down width to a button width -- 31.1688 = 26.66666/.8555555 . . .*/
+#wic-form-constituent .wic-selectmenu-wrapper.address-type,
+#wic-form-constituent .wic-selectmenu-wrapper.phone-type, 
+#wic-form-constituent .wic-selectmenu-wrapper.email-type {
+	margin: 0 2.0860% 0 0;
+	width: calc( 31.1688% - 20px);
+} 
+
+.wic-input.phone-number,
+.wic-input.extension,
+.wic-input.city,
+.wic-input.state,
+.wic-input.zip {
+	margin: 0 2.0860% 10px 0%;
+	width: 31.1688%;
+	display: inline-block;
+}
+.wic-input.zip {
+	margin: 0 2.0860% 10px 0%;
+	width: calc( 31.1688% - 5.530% - 2.0860% );
+	display: inline-block;
+
+}
+
+
+#wic-constituent-delete-button {
+	color: red;
+	margin-left: 14.222%;
+	width: 26.66666%;
+}
+
+#wic-constituent-delete-button:hover {
+	color: #FFD700;
+}
+
+
+#wic-field-subgroup-address_line_1,
+.wic-field-subgroup-address_line_1 {
+	margin: 0 0 10px 0;
+}
+
+.wic-input.email-address {
+	margin: 0 2.0860% 10px 0%;
+	/* 66.3212% = 4*14.2222/.85777777 - 2.0860 */
+	width: calc(64.2352444% - 5.530% - 2.0860%);
+	display: inline-block;
+}
+
+.wic-form-button.map-individual-address-button,
+.wic-form-button.email-action-button.in-line-email-compose-button.email-compose-button {
+	margin: 0;
+	padding: 0;
+	text-align: middle;
+	width: 5.530%;
+	display: inline-block;
+}
+
+.wic-input.address-line  {
+	width: 64.2352444%;
+}
+
+#wic-field-group-dedup,
+#constituent_delete_dialog .wic-label,
+#constituent_delete_shell {
+		display: none;
+}
+
+#constituent_delete_dialog .wic-selectmenu-wrapper {
+ width: 100%;
+}
+#constituent_delete_dialog p,
+#constituent_delete_dialog ol li {
+	font-size: 0.9em;
+}
+
+#constituent_delete_dialog .wic-selectmenu-options-layer {
+	width: 100%;
+}
+
+/* hide unnecessary labels */
+.wic-label.address-type,
+.wic-label.address-line,
+.wic-label.city,
+.wic-label.email-address,
+.wic-label.email-type,
+.wic-label.extension,
+.wic-label.first-name,
+.wic-label.last-name,
+.wic-label.middle-name,
+.wic-label.phone-number,
+.wic-label.phone-type, 
+.wic-label.state,
+.wic-label.zip {
+	display: none;
+} 
+
+li.constituent-comment-date,
+li.constituent-comment-issue {
+	display: inline-block;
+	color: #777;
+}
+
+li.constituent-comment-date {
+	vertical-align: top;
+	width: 23.4375%;
+}
+
+li.constituent-comment-issue {
+	width: 75%;
+}
+
+li.constituent-comment-date {
+	margin-right: 1.5625%; 
+}
+
+ul.constituent-comment-row,
+ul#constituent-comment-list {
+	list-style: none;
+	margin: 10px 0 0 0 ;
+	padding: 0;
+}
+
+#switch_to_dup_link {
+	display: none;
+	font-size: 0.7em;
+}
+
+@media only screen and (max-width: 960px) {
+
+	#wic-field-group-activity,
+	#wic-field-group-contact {
+		margin-top: 20px;
+	}
+	#wic-control-middle-name,
+	#wic-control-first-name,
+	#wic-control-last-name {
+		margin: 0 0 20px .88888888%;
+		width: 45%;
+	}
+
+	#wic-control-middle-name {
+		width: 6.44444%
+	}
+	
+	#wic-form-constituent .wic-input,
+	#wic-form-constituent select.wic-input	 {
+		margin: 0 0 0 .8888%
+	}
+
+	.wic-input.salutation {
+		width: 98.22222%;
+		display: inline-block;
+	} 
+
+
+	#wic-form-constituent select.wic-input.address-type,
+	#wic-form-constituent select.wic-input.phone-type, 
+	#wic-form-constituent select.wic-input.email-type {
+		margin-right: 0;
+		width: calc( 27.55555% - 20px);
+	} 
+	
+	.wic-input.phone-number,
+	.wic-input.extension {
+		width: 34.444%;
+	}
+
+	.wic-input.email-address {
+		margin: 0 0 10px 0.888888%;
+		width: calc(69.77777% - 20px );
+	}
+
+	.wic-input.address-line  {
+		width: 69.77777%;
+	}
+
+	.wic-input.city,
+	.wic-input.state,
+	.wic-input.zip {
+		margin: 0 0 0 .8888%;
+		width: 32.1%;
+	}
+
+	#is_deceased {
+		margin-left: 0.8888%;
+	}
+	
+
+}
+

@@ -1,0 +1,87 @@
+
+/*
+* office list styling
+*/
+li.wic-post-list-header.pl-office,
+li.wic-post-list-field.pl-office-ID {
+	width: 7%;
+	margin-right: 3%;
+}
+
+li.wic-post-list-header.pl-office-office_label,
+li.wic-post-list-field.pl-office-office_label {
+	width: 22%;
+	margin-right: 3%;
+}
+
+li.wic-post-list-header.pl-office-office_enabled,
+li.wic-post-list-field.pl-office-office_enabled {
+	width: 7%;
+	margin-right: 3%;
+}
+li.wic-post-list-header.pl-office-user,
+li.wic-post-list-field.pl-office-user {
+	width: 52%;
+	margin-right: 3%;
+}
+
+
+/* office form styling */
+#wic-form-office #wic-form-main-groups {
+	width: 100%;
+}
+#wic-form-office #wic-form-sidebar-groups {
+	display: none;
+}	
+
+#wic-form-office #wic-form-main-groups .wic-form-field-group-legend,
+#wic-form-office  #wic-form-main-groups .field-group-show-hide-button {
+	display: none;
+}
+
+
+/* 12.4444+ 1.77777 = 14.222222 */
+#wic-form-office label.wic-label {
+	display: inline-block;
+	font-size: 0.8em;
+	min-width: 5.333333%;
+	margin-right: 1.777777%;
+	padding: 0;
+	text-align: right;
+	vertical-align: top;
+}
+
+#wic-form-office label.wic-label.user-max-capability {
+	width: 7%;
+	margin: 0 .2% 0 0;
+}
+#wic-form-office label.wic-label.user-name,
+#wic-form-office label.wic-label.user-email {
+	width: calc(.94*3%);
+	margin: 0 calc(.94*.2%) 0 0;
+} 
+
+#wic-form-office .wic-selectmenu-wrapper.wic-input.user-max-capability,
+#wic-form-office .wic-input.user-name,
+#wic-form-office .wic-input.user-email {
+    margin: 0 calc(.94*1.777777%) 0 0;
+	width: calc(.94*23.466666666%);
+}
+
+
+#wic-form-office label.wic-label::after {
+	content: ": "
+}
+
+#mail_error_log_list,
+#wic-form-office div.wic-control#wic-control-user {
+	background-color: #fafafa;
+	padding: 20px;
+	margin: 20px 3%;
+	border: 1px solid #ddd;
+}
+
+
+#mail_error_log_list h3 {
+	color: #777;
+}

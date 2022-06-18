@@ -1,0 +1,60 @@
+
+/*
+* settings form styling
+*/
+#crm-settings {
+	margin: 0 7.1111%
+}
+
+#crm-settings .button.button-primary {
+	margin-left: 0;
+}
+
+.wic-settings {
+	max-width: 960px;
+}
+
+.wic-settings ul {
+	list-style-position: inside;
+	list-style-type: circle;
+	font-size: 0.9em;
+} 
+
+
+#synch-comments-button,
+#wic-email-receive-test-button,
+#wic-email-send-test-button {
+	width: 190px;
+	font-size: 13px;
+	margin-left: 0;
+}
+
+#crm-settings .ui-tabs .ui-tabs-panel {
+	padding: 0;
+}
+
+
+
+.wic-form-button.wic-save-settings-button.wic-alert-class {
+	border: dashed 1px #bbb;
+}
+
+#wp_issues_crm_plugin_options_array\[imap_inbox\] {
+	width: 120px;
+}
+
+.wp-issues-crm-stats td.requirements-ok,
+.wp-issues-crm-stats td.requirements-ok a {
+	color: green;
+}
+
+
+.wp-issues-crm-stats td.requirements-probably-ok,
+.wp-issues-crm-stats td.requirements-probably-ok a {
+	color: orange;
+}
+
+.wp-issues-crm-stats td.requirements-not-ok,
+.wp-issues-crm-stats td.requirements-not-ok a {
+	color: red;
+}

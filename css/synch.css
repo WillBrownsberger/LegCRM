@@ -1,0 +1,21 @@
+
+/*
+* options form styling
+*/
+
+#wic-form-synch .synch-working-area {
+	margin-left: 14.2222%;
+}
+
+.wic-form-button.action-synch-button {
+	margin: 0;
+	width: 98.22222222%;
+}
+
+#wic-form-synch .dashicons.dashicons-yes {
+	color: green;
+}
+
+.synch-results-area {
+	font-size: 0.8em;
+}

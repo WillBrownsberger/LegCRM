@@ -1,0 +1,215 @@
+
+/*******************************************************
+*
+* Styling for advanced search form 
+*
+********************************************************/
+#wic-form-advanced-search #wic-form-main-groups {
+	width: 100%;
+}
+
+#wic-form-advanced-search #wic-form-sidebar-groups,
+#wic-form-advanced-search #wic-field-group-search_parms .wic-form-field-group-legend,
+#wic-field-group-search_definition .wic-form-field-group-legend,
+#wic-field-group-search_constituent .wic-form-field-group-legend,
+#wic-field-group-search_activity .wic-form-field-group-legend {
+	display: none;
+}
+
+#wic-form-advanced-search .wic-multivalue-block {
+	margin-bottom: 0;
+}
+
+
+#wic-inner-field-group-search_constituent_having p.wic-form-field-group-legend,
+.wic-multivalue-block.advanced_search_issue,
+#wic-control-advanced-search-issue,
+.wic-multivalue-block.advanced_search_constituent,
+#wic-control-advanced-search-constituent,
+.wic-multivalue-block.advanced_search_activity,
+#wic-control-advanced-search-activity,
+.wic-multivalue-block.advanced_search_constituent_having,
+#wic-control-advanced-search-constituent-having  {
+	margin-bottom: 0;
+}
+
+#wic-inner-field-group-search_constituent-toggle-button, 
+#wic-inner-field-group-search_activity-toggle-button,
+#wic-inner-field-group-search_issue-toggle-button,
+#wic-inner-field-group-search_constituent_having-toggle-button,
+#wic-form-advanced-search #wic-inner-field-group-search_parms-toggle-button {
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+
+#wic-form-advanced-search label.wic-label {
+	min-width: 6.2222222%;
+	margin-right: 0.88888%;
+}
+
+#wic-form-advanced-search .wic-multivalue-control-set {
+	width: 92.88888%;
+	margin-left: 0;
+	margin-right: 0;
+} 
+ 
+#wic-form-advanced-search .wic-input-deleted-label {
+	margin-right: 3%;
+}
+
+.wic-selectmenu-wrapper.wic-input.activity-or-constituent,
+.wic-selectmenu-wrapper.wic-input.activity-and-or-constituent {
+	width: calc(36.46% + 20px);
+}
+
+.wic-selectmenu-wrapper.wic-input.issue-and-or,
+.wic-selectmenu-wrapper.wic-input.constituent-and-or,
+.wic-selectmenu-wrapper.wic-input.activity-and-or,
+.wic-selectmenu-wrapper.wic-input.constituent-having-and-or {
+	margin-left: 11%;
+	margin-left: calc(9.897% + 20px);
+	width: 23.222%;
+}
+
+.wic-selectmenu-wrapper.wic-input.activity-and-or-constituent,
+#wic-form-advanced-search #wic-form-main-groups .field-group-show-hide-button,
+#wic-form-advanced-search #wic-form-main-groups .wic-form-field-group-legend {
+	margin-left: 7.1%
+}
+
+.wic-input.issue-field,
+.wic-input.constituent-field,
+.wic-input.activity-field {
+	width: 25%
+}
+
+.wic-input.issue-comparison{
+	width: 20.77777778%;
+}
+
+.wic-input.constituent-having-aggregator {
+	width: 7.111%;
+}
+
+.wic-input.constituent-having-field {
+	width: 16.222%;
+}
+.wic-input.constituent-entity-type,
+#wic-form-advanced-search .wic-input.activity-type,
+.wic-input.constituent-having-type,
+.wic-input.constituent-comparison,
+.wic-input.activity-comparison,
+.wic-input.constituent-having-comparison {
+	width: 9.5%;
+}
+
+
+
+.wic-input.issue-value,
+.wic-input.issue-value.wic-live-issue,
+.wic-input.issue-value.post-content,
+.wic-input.constituent-value,
+.wic-input.last-updated-by.constituent-value,
+.wic-input.last-updated-time.constituent-value,
+.wic-input.zip.constituent-value,
+.wic-input.city.constituent-value,
+.wic-input.state.constituent-value,
+.wic-input.address-line.constituent-value,
+.wic-input.email-address.constituent-value,
+.wic-input.extension.constituent-value,
+.wic-input.phone-number.constituent-value,
+.wic-input.city.constituent-value,
+.wic-input.activity-value,
+.wic-input.activity-date.activity-value,
+.wic-input.activity-amount.activity-value,
+.wic-input.activity-note.activity-value,
+.wic-input.pro-con.activity-value,
+.wic-input.last-updated-time.activity-value,
+.wic-input.last-updated-by.activity-value,
+#wic-form-advanced-search .tags-input,
+#wic-form-advanced-search .post-title,
+#wic-form-advanced-search .wic_multi_select.activity-value.issue
+{
+	width: 37%;
+	max-height: 32px;
+}
+
+textarea.wic-input.activity-note.activity-value {
+	height: 28px;
+	padding: 3px 5px 0 5px;
+	vertical-align: top; 
+}
+
+#wic-form-advanced-search .wic_multi_select {
+	width: 21.25%;
+	margin-right: 1.25%;
+	margin-bottom: 5px;
+}
+
+#wic-form-advanced-search .wic_multi_select,
+.wic_multi_select.activity-value.issue {
+	border: .9166667px solid #ddd;
+	padding: 0 5px;
+	max-height: 100px;
+	vertical-align: top; 
+}
+
+.wic-input.constituent-having-value {
+	width: 14.50%
+}
+
+#wic-form-advanced-search .wic_multi_select:hover,
+.wic_multi_select.activity-value.issue:hover {
+	border-color: #5b9dd9 
+}
+
+
+.wic-input.date-of-birth.constituent-value,
+.wic-input.is-deceased.constituent-value,
+.wic-input.gender.constituent-value,
+.wic-input.ID.constituent-value,
+.wic-input.last-name.constituent-value,
+.wic-input.mark-deleted.constituent-value,
+.wic-input.middle-name.constituent-value,
+.wic-input.first-name.constituent-value,
+.wic-input.custom-field-001.constituent-value,
+.wic-input.custom-field-002.constituent-value,
+.wic-input.custom-field-003.constituent-value,
+.wic-input.custom-field-004.constituent-value,
+.wic-input.custom-field-005.constituent-value,
+.wic-input.custom-field-006.constituent-value,
+.wic-input.custom-field-007.constituent-value,
+.wic-input.custom-field-008.constituent-value,
+.wic-input.custom-field-009.constituent-value,
+.wic-input.custom-field-010.constituent-value,
+.wic-input.custom-field-011.constituent-value,
+.wic-input.custom-field-012.constituent-value,
+.wic-input.custom-field-013.constituent-value,
+.wic-input.custom-field-014.constituent-value,
+.wic-input.custom-field-015.constituent-value,
+.wic-input.custom-field-016.constituent-value,
+.wic-input.custom-field-017.constituent-value,
+.wic-input.case-review-date.constituent-value,
+.wic-input.case-assigned.constituent-value,
+.wic-input.case-status.constituent-value
+{
+	width: 48.25%;
+}
+
+.wic-input.first-name.constituent-value {
+	margin-bottom: 0;
+}
+
+
+@media only screen and (max-width: 960px) {
+	label.wic-label.activity-or-constituent{
+		display: inline-block;	
+	}	
+	
+	.wic-selectmenu-wrapper.wic-input.constituent-and-or,
+	.wic-selectmenu-wrapper.wic-input.activity-and-or,
+	.wic-selectmenu-wrapper.wic-input.constituent-having-and-or  {
+		margin-left: calc(2.786% + 20px);
+	}
+}

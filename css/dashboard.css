@@ -1,0 +1,319 @@
+/*
+* dashboard css
+* 
+* includes all dashboard styling, including buttons and list styling
+*/
+#dashboard-sortables {
+	margin-top: 10px;
+}
+
+#dashboard-sortables #post-form-message-box {
+	display: none;
+}
+
+.wic-dashboard {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	background: #fafafa;
+	border: 1px solid #ccc;
+	float: left;
+	width: calc( 100% - 20px);
+	height: auto;
+	overflow-y: hidden;
+	margin: 0 10px 10px 10px;
+	padding: 0 10px 0 10px;
+	position: relative;
+}
+
+/* like buttons, see buttons.css */
+.wic-dashboard-title {
+	box-shadow: none;
+	background: #f6f6f6 url("jquery-ui-1.11.4.custom/images/ui-bg_highlight-soft_100_f6f6f6_1x100.png") repeat-x scroll 50% 50%;
+	border: none;
+	border-radius: 0px;
+    color: #999;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 1.1em;
+    font-weight: bold;
+    height: 28px;
+    line-height: 26px;
+    margin: 0; 
+    overflow: visible;
+    padding: 0;
+    padding-left: 10px;
+    position: relative;
+    text-align: left;
+    text-shadow: none;
+}
+
+.wic-dashboard-title:hover {
+  	background: #2ea2cc url("jquery-ui-1.11.4.custom/images/ui-bg_highlight-soft_25_2ea2cc_1x100.png") repeat-x scroll 50% 50%;
+    border-bottom: 1px solid #2ea2cc;
+    color: #fff;
+    font-weight: bold;
+}
+
+.wic-dashboard-title:active  {
+	color:  #FFD700;
+}
+
+
+/* used in email too */
+button.wic-dashboard-title {
+	padding: 0 4px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;	
+}
+
+.wic-dashboard-drag-handle {
+	width: calc( 100% - 30px);
+}
+
+#dashboard_activity .wic-dashboard-drag-handle {
+	width: calc( 100% - 210px );
+}
+
+#dashboard_activity_type .wic-dashboard-drag-handle {
+	width: calc( 100% - 180px );
+}
+
+#dashboard_issues .wic-dashboard-drag-handle,
+#dashboard_cases .wic-dashboard-drag-handle {
+	width: calc( 100% - 390px );
+}
+
+.wic-dashboard-expand-button,
+.wic-dashboard-refresh-button {
+	width: 30px;
+}
+
+.wic-dashboard #filter-activities-button {
+	width: 30px;
+	margin: 0;
+	border-radius: 0;
+	border: none;
+}
+#wp-issues-crm .wic-dashboard input[type=text] {
+	color: #999;
+}
+.wic-dashboard .wic-selectmenu-wrapper.issue-staff,
+.wic-dashboard .wic-selectmenu-wrapper.case-assigned {
+	width: 240px;
+}
+
+.wic-dashboard .wic-selectmenu-wrapper.follow-up-status, 
+.wic-dashboard .wic-selectmenu-wrapper.case-status {
+	width: 120px;
+}
+
+.wic-dashboard .wic-selectmenu-wrapper {
+	margin: 0;
+}
+
+.wic-dashboard .wic-input.date-range {
+	width: 150px; 
+	margin: 0;
+	border-top: 1px solid #fff;
+	color: #999;
+}
+
+#dashboard\[end\]\[date_range\] {
+	border-left: none;
+}
+.wic-dashboard-title .dashicons-before::before,
+.wic-dashboard-title .dashicons {
+	vertical-align: middle;
+}
+
+.wic-dashboard-title.wic-dashboard-drag-handle .dashicons.dashicons-move {
+	display: none;
+}
+.wic-dashboard-title.wic-dashboard-drag-handle:hover .dashicons.dashicons-move {
+	display: inline-block;
+}
+
+.wic-dashboard-notice {
+	border: 1px solid #0a0;
+	margin: 10px;
+	color: #555;
+	padding: 30px;
+}
+
+/* overrides ui-state-default,but not other styling */
+.wic-inner-dashboard {
+	font-weight: 400;
+	height: 0;
+	overflow-y: hidden;
+}
+.wic-inner-dashboard ul.wic-post-list {
+	height: 0;
+}
+.wic-dashboard-tall .wic-inner-dashboard {
+	height: auto;
+	min-height: 130px;
+	max-height: calc( 100vh - 240px) ;
+	margin-bottom: 30px;
+}
+.wic-dashboard-tall .wic-inner-dashboard ul.wic-post-list {
+	height: auto;
+	min-height: 130px;
+	max-height: calc( 100vh - 240px) ;
+}
+
+.dashboard-not-found {
+	margin: 20px;
+	font-style: italic;
+}
+
+
+.wic-dashboard #filter-activities-menu {
+	width: 30%;
+	min-width: 300px;
+	margin-right: 10%;
+	margin-top: -15px;
+	position: absolute;
+	left: 70%;
+	top: 45px;
+	z-index: 100;
+}
+.wic-dashboard #filter-activities-menu .wic_multi_select {
+	width: 100%;
+}
+
+.wic-dashboard #filter-activities-menu .wic-multi-select-label {
+	width: 90%;
+}
+#filter-activities-menu .wic-label {
+	display: none;
+}
+
+.wic-dashboard .wic-input.datepicker::placeholder {
+	font-style: italic;
+	font-weight: 250;
+	color: #999;
+}
+#wic-inner-dashboard-dashboard_overview {
+	padding: 0 10px;
+}
+
+table#wic-work-flow-status {
+	width: 100%;
+	color: #777;
+	border-top: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+	padding: 10px;
+	line-height: 2.0em;
+}
+
+table#wic-work-flow-status tr:nth-child(odd){ 
+	background: #f0f0f0;
+}
+table#wic-work-flow-status tr:nth-child(even){
+	background: #fefefe;
+}
+
+#wic-work-flow-status td.wic-staff-overdue-assignment {
+	font-weight: 400;
+	color: #b66;
+}
+
+#wic-work-flow-status td:nth-child(1),
+#wic-work-flow-status th:nth-child(1) {
+	width: 23%;
+}
+
+#wic-work-flow-status th {
+	font-size: 1.0em;
+}
+#wic-work-flow-status td {
+	font-size: 1.2em;
+	border-top: 1px solid #ddd;
+}
+
+.wic-email-dashboard-date {
+	font-style: italic;
+	font-weight: 300;
+}
+
+#wic-work-flow-status td,
+#wic-work-flow-status th {
+	width: 11%;
+	padding: 3px;
+	text-align: center;
+}
+
+#wic-work-flow-status tr th:nth-child(1),
+#wic-work-flow-status tr td:nth-child(1) {
+	text-align: left;
+	padding-left: 20px;
+}
+
+
+@media only screen and (max-width: 960px) {
+
+	/* search log shrink -- make the wide version look like the quarter version */
+	/* hide two fields */
+	.wic-post-list-header.pl-search_log-serialized_search_array,
+	.wic-post-list-header.pl-search_log-download_time,	
+	.wic-post-list-field.pl-search_log-serialized_search_array,
+	.wic-post-list-field.pl-search_log-download_time { display: none; }
+	/* make the star width 10% and the main button 90% */	
+	div.wic-post-list-headers.search_log,
+	button.wic-post-list-button.wic-search-log-list-button { 
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+		width: 90%; 
+	}
+	div.wic-post-list-headers-spacer.search_log,
+    button.wic-favorite-button {
+    	-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+    	width: 10%; 
+    }
+	.wic-post-list-header.pl-search_log-search_time,		
+	.wic-post-list-field.pl-search_log-search_time { 
+		width: 40%; margin-right: 3%; 
+	}
+  	.wic-post-list-field.pl-search_log-share_name,
+	.wic-post-list-headers .pl-search_log-share_name {
+		overflow-x: hidden;
+		width: 27.5%;
+		margin-right: 3%;
+	}
+	.wic-post-list-headers .pl-search_log-result_count {
+		width: initial;
+	}
+	/* upload shrink */
+	.wic-post-list-header.pl-upload-upload_time, 
+	.wic-post-list-field.pl-upload-upload_time, 
+	.wic-post-list-header.pl-upload-upload_by, 
+	.wic-post-list-field.pl-upload-upload_by 
+		{ 
+		width: 45%; 
+	}
+	.wic-post-list-header.pl-upload-upload_file,
+	.wic-post-list-header.pl-upload-upload_description,
+	.wic-post-list-header.pl-upload-upload_status, 
+	.wic-post-list-field.pl-upload-upload_file,
+	.wic-post-list-field.pl-upload-upload_description,
+	.wic-post-list-field.pl-upload-upload_status 
+		{ display: none; }	
+
+	.wic-post-list-header.pl-trend-id,
+	.wic-post-list-field.pl-trend-id 
+		{ width: 80%; }
+	.wic-post-list-header.pl-trend-total,
+	.wic-post-list-field.pl-trend-total
+		{ width: 15%; }
+	li.wic-post-list-header.pl-trend-total ~ li,
+	li.wic-post-list-field.pl-trend-total ~ li {
+		display: none;
+	}
+
+
+}
