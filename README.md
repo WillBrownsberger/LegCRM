@@ -19,9 +19,14 @@ Strongly desirable additional elements from outside Azure include:
 * A geocoding service -- this version of the software includes an interface with GEOCOD.IO
 # Incorporated Open Source Software
 This software relies on three open source software components, compatible versions of which are packaged in the /js directory.
-1. JQuery
+1. JQuery/JQueryUI
 2. TinyMCE
 3. PLUpload
+
+JQuery and JQueryUI are licensed under the same MIT license as this software.  See: https://jquery.org/license/
+PLupload and TinyMCE are licensed under varations of GNU Version 2.  Their license texts are included in this distribution.
+
+
 # Installation
 The installation will depend somewhat on the environment, but the major steps are:
 1. Configure a PHP Web App and an SQL Server in Azure.
