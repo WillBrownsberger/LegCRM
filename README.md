@@ -12,11 +12,11 @@ This software is built to run in the Microsoft Azure cloud. The major components
 4. Several Web Jobs that run C# routines to interact with Microsoft Graph to read, parse, and send email messages.
 
 Strongly desirable additional elements from outside Azure include:
-* List of voters (could run without this and build through correspondence)
-* Google Maps API key (to support geographic visualization and refinement of constituent search results)
+* List of voters (could run without this and build through office operations)
+* Google Maps API key (to support geographic visualization and refinement of constituent search results; use of the Google Maps API may generate charges, depending on volume).
 * US Postal Service API Key (for address standardization and zip code assignment; the software only handles U.S. formatted addresses)
-* GEOJSON files defining legislative districts and municipal boundaries
-* A geocoding service -- this version of the software includes an interface with GEOCOD.IO
+* GEOJSON files defining legislative districts and municipal boundaries 
+* A geocoding service -- this version of the software includes an interface with GEOCOD.IO (use of GEOCOD.IO requires an account and may generate charges depending on volume).
 # Incorporated Open Source Software
 This software relies on three open source software components, compatible versions of which are packaged in the /js directory.
 1. JQuery/JQueryUI
