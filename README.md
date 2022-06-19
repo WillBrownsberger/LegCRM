@@ -24,7 +24,8 @@ This software relies on three open source software components, compatible versio
 3. PLUpload
 
 JQuery and JQueryUI are licensed under the same MIT license as this software: https://jquery.org/license/
-PLupload and TinyMCE are licensed under varations of GNU Version 2.  Their license texts are included in this distribution.
+
+PLupload and TinyMCE are licensed under variations of GNU Version 2.  Their license texts are included in this distribution.
 
 
 # Installation
