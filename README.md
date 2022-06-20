@@ -36,7 +36,7 @@ The installation will depend somewhat on the environment, but the major steps ar
 2. Install all of the contents of this repo, excepting the /LegCRMtoGraph subdirectory, in the root directory of the Azure Web App.
 3. Edit legcrm-config.php to reflect the Azure Web App and Azure SQL server location and credentials.  
 4. If they are available available, edit legcrm-config.php to add the legislative district geojson files (model them on the samples in the GeoJSON directory), the Google Maps key, and the U.S. Postal Service API key.  
-5. Execute the scripts in the /sql subdirectory in the following order: 
+5. Using credentials with authority to create databases and all other objects, execute the scripts in the /sql subdirectory in the following order: 
 * /structure/structures.sql
 * /data/interface.sql
 * all scripts in /type
