@@ -30,7 +30,7 @@ PLupload and TinyMCE are licensed under variations of GNU Version 2.  Their lice
 
 # Installation
 The installation will depend somewhat on the environment, but the major steps are:
-1. Configure a PHP Web App and an SQL Server in Azure.
+1. Configure a PHP Web App (PHP Version 8.0, latest available in Azure as of publication) and an SQL Server in Azure.
 * Configure the Web App to be accessible only for users authorized in Azure Active Directory; the App relies on Azure AAD services to identify authorized users
 * Configure the SQL Server to be accessible only to the Web App and to the Web Jobs configured further below.
 2. Install all of the contents of this repo, excepting the /LegCRMtoGraph subdirectory, in the root directory of the Azure Web App.
