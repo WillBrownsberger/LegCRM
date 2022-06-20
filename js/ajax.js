@@ -288,7 +288,7 @@ jQuery( document ).ready( function($) {
 		if (  'string' == typeof err.name && 'NS_ERROR_ILLEGAL_VALUE' == err.name && 'string' === typeof stateString && stateString.length > 300000 ) {
 			return  ' <p>Likely that exceeded max page size for browser history caching. </p>' + 
 				'<p>Attempted to save page of length ' + stateString.length + ' -- too long for your browser. Switch to Google Chrome for maximum capacity of 10M.</p>' + 
-				'<p>If you are using Chrome and this error persists, please contact <a href="mailto:help@wp-issues-crm.com">help@wp-issues-crm.com</a></p>';
+				'<p>If you are using Chrome and this error persists, please contact your systems administrator.</p>';
 		} else if ( 'string' == typeof err && err.length > 0 ) {
 			return err;
 		} else {

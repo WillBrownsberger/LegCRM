@@ -133,12 +133,12 @@ class WIC_Form_Upload_Map extends WIC_Form_Upload  {
 		
 		// assemble output
 		$output .= '<div id = "wic-droppable-column">';
-		$output .= '<h3>Drag upload fields into WP Issues CRM fields to map them <a href="http://wp-issues-crm.com/?page_id=213" target = "_blank">(see tips)</a>' . '</h3>';
+		$output .= '<h3>Drag upload fields into WP Issues CRM fields to map them.</h3>';
 		$output .= '<div id = "constituent-targets"><h4>' . 'Identity' . '</h4>' . $constituent_identifiers . '</div>';		
 		$output .= '<div class = "horbar-clear-fix"></div>';
 		$output .= '<div id = "address-targets"><h4>' . 'Address' . '</h4>' . $address_main . '</div>';		
 		$output .= '<div class = "horbar-clear-fix"></div>';
-		$output .= '<div id = "address-part-targets"><h4>' . 'Street Address parts (if supplied will be combined to form Street Address -- <a href="http://wp-issues-crm.com/?page_id=213" target = "_blank">see tips)</a>' . '</h4>' . $address_parts . '</div>';		
+		$output .= '<div id = "address-part-targets"><h4>' . 'Street Address parts (if supplied will be combined to form Street Address -- <a href="https://github.com/WillBrownsberger/LegCRM/wiki/Street-Addresses-in-the-Upload-Process" target = "_blank">see Wiki)</a>' . '</h4>' . $address_parts . '</div>';		
 		$output .= '<div class = "horbar-clear-fix"></div>';
 		$output .= '<div id = "contact-targets"><h4>' . 'Contact info' . '</h4>' . $contact_info . '</div>';		
 		$output .= '<div class = "horbar-clear-fix"></div>';

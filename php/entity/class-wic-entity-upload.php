@@ -56,7 +56,7 @@
 *		
 *	Enforcement of proper staging sequence by access sequence.
 *
-*   Enforcement of Validation and Field Required rules in the upload is explained at: http://wp-issues-crm.com/?page_id=220
+*   Enforcement of Validation and Field Required rules in the upload is explained at:https://github.com/WillBrownsberger/LegCRM/wiki/Validation-Rules-in-the-Upload-Process-(Technical)
 *
 *
 *

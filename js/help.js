@@ -4,11 +4,11 @@
 jQuery( document ).ready( function($) { 
 
 	$( "#wic_help_button" ).on( "click", function ( event ) {
-		 window.open( "https://wordpress.org/support/plugin/wp-issues-crm" );
+		 window.open( "https://github.com/WillBrownsberger/LegCRM/wiki" );
 		 event.stopImmediatePropagation();
 	});
 	$( "#wic_manual_button" ).on( "click", function ( event ) {
-		 window.open( "http://wp-issues-crm.com/" );
+		 window.open( "https://github.com/WillBrownsberger/LegCRM/wiki" );
 		 event.stopImmediatePropagation();
 	});
 
