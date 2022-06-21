@@ -6,7 +6,7 @@ Documentation appears in [the repo wiki](https://github.com/WillBrownsberger/Leg
 [Incorporated Open Source Software](https://github.com/WillBrownsberger/LegCRM/wiki/Incorporated-Open-Source-Software)  
 [Requirements](https://github.com/WillBrownsberger/LegCRM/wiki/Requirements)   
 [Installation](https://github.com/WillBrownsberger/LegCRM/wiki/Installation)  
-[List and Search Methods](https://github.com/WillBrownsberger/LegCRM/wiki/List-and-Search-Methods-(technical))  
+
 
 
 
