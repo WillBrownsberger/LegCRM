@@ -80,7 +80,7 @@ class WIC_Form_Issue extends WIC_Form_Parent  {
 		   'fields' => array('issue_staff','follow_up_status','review_date')),
 		'issue_creation'=> array(
 		   'group_label' => 'Codes',
-		   'group_legend' => 'These fields are not updateable except through the regular Wordpress admin screens.',
+		   'group_legend' => 'These fields are not updateable except through bulk uploads.',
 		   'initial_open' => '0',
 		   'sidebar_location' => '0',
 		   'fields' => array('last_updated_by','last_updated_time','ID','OFFICE')),

@@ -14,7 +14,7 @@ class WIC_Admin_Access {
 	*
 	* Records are assigned in the case management field group for issues and constituents or from the inbox for messages.
 	*
-	* GET security is mediated by Wordpress and $nav_array in WIC_Admin_Navigation, but this module is also called on GETS to verify record level access rules
+	* GET security is mediated by $nav_array in WIC_Admin_Navigation, but this module is also called on GETS to verify record level access rules
 	*
 	* This module is primarily for authorizing calls to wpIssuesCRM ajax endpoints (both of which route only to classes in /php/entity) and the 3 upload and 2 download functions
 	*

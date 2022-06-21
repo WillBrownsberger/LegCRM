@@ -51,14 +51,7 @@ abstract class WIC_DB_Access {
 
 	/**********************************************************************************************************
 	*
-	*	Pass through for delete function -- this is the only delete function and its usage differs from other 
-	*		db access functions.  Most are invoked by entity classes.  However, constituents are only soft deleted
-	*		by marking them with the DELETED value.  Issues are not deletable except through  Wordpress admin.
-	*  
-	*		The hard database delete function is used for sub-entities ( e.g. email or activity) and is invoked in 
-	*		WIC_Control_Multivalue -- when a form is received with deleted/hidden elements in it, those are discarded
-	*		as the control object is loaded in the data_object_array.  If they have an ID, they are also physically deleted
-	*		by a call to this function.
+	*	Pass through for delete function
 	*
 	**********************************************************************************************************/
 

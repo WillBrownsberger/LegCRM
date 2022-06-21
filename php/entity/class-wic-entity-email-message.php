@@ -379,7 +379,6 @@ Class WIC_Entity_Email_Message {
 		} // else have a valid message object
 	}
 	
-	// use straight wordpress call to populate issue peek popup
 	public static function get_post_info ( $issue, $dummy ) {
 		global $current_user;
 		$post_object = WIC_DB_Access_Issue::get_post_details ( (int) $issue ); 

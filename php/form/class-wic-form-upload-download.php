@@ -197,7 +197,7 @@ class WIC_Form_Upload_Download extends WIC_Form_Upload  {
 						'This backout function deletes newly added activities and newly added constituents. ' .
 					'</li>' .
 					'<li>' .
-						'Updates to address, phone or email of existing constituents generally cannot be reversed except by restoration from a Wordpress database backup.' .
+						'Updates to address, phone or email of existing constituents generally cannot be reversed.' .
 					'</li>' .
 					'<li>' .
 						'The backout process runs much faster than the update process, but is not chunked and can take a few minutes for larger jobs.' .

@@ -21,7 +21,7 @@ class WIC_Admin_Navigation {
 	*			If page request includes attachment ID, it will get served off index.php to emit_stored_file before do_headers -- check_security checks capability and nonce
 	*
 	*		AJAX Requests to Entities run through check_security for both capability and nonce checking		
-	*			AJAX Form Posts -- all forms are submitted via AJAX to lower Wordpress Admin overhead
+	*			AJAX Form Posts -- all forms are submitted via AJAX to lower overhead
 	*			AJAX Requests -- specific actions below the entity level
 	*			Only Entity Classes/methods are invoked by the AJAX endpoints -- check_security covers all entities
 	*
@@ -121,7 +121,6 @@ class WIC_Admin_Navigation {
 
 
 	// format a page from menu ( or direct $_GET in which case, invoke entity/action based on $_GET; if not permitted entity/action pair route to default )
-	// wordpress is doing the security checking on a GET
 	public function do_page (){ 
 		global $current_user;
 		// set page to main if coming in new

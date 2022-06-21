@@ -376,7 +376,7 @@ class WIC_Entity_Upload_Upload {
 	*/
 	public static function stage_upload ( $id, $form_data ) {
 	
-		// access wordpress database object
+		// access database object
 		global $sqlsrv;
 		
 		$save_start = time();

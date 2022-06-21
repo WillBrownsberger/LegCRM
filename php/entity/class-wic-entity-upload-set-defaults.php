@@ -60,7 +60,7 @@
 	
 		// new staging table name				
 		$new_issue_table = $staging_table . '_new_issues';
-		// wordpress post table
+		// issue table
 		$post_table = 'issue';
 		// drop table if it already exists (may have been remapped)
 		$sql = "DROP TABLE IF EXISTS $new_issue_table";

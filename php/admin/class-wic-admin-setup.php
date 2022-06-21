@@ -105,8 +105,7 @@ class WIC_Admin_Setup {
 	// load scripts and styles
 	private function load_wic_scripts () {
 	
-		/* load jquery and jquery ui -- note that later versions of jquery (and poss jquery ui) involve breaking changes; 
-		// wordpress a/o 2109 still using jquery 1.12.4*/
+		// load jquery and jquery ui -- note that later versions of jquery (and poss jquery ui) involve breaking changes; 
 		echo '<script src="' . self::root_url() . 'js/jquery-1.12.4.min.js"></script>' . "\n";
 		echo '<script src="' . self::root_url() . 'js/jquery-ui-1.11.4/jquery-ui.min.js"></script>' . "\n";
 			

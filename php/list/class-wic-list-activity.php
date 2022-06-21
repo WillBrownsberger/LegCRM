@@ -158,9 +158,7 @@ class WIC_List_Activity extends WIC_List_Parent {
 		
 		$button.= '<div class="list-popup-wrapper">
 				<div id="delete_activities_dialog" title="Permanently delete '. self::activity_plural_phrase ( $wic_query->found_count ) . '." class="ui-front">' . 
-					'<p></p><p>Note: ' .
-					('issue' == $search_type ? 'The filter button (<span class="dashicons dashicons-filter"></span>) does <strong>NOT</strong> limit deletions. However, a' : 'A' ) . 'ctivity records that 
-					are derived from front-end Wordpress comments will not be deleted.</p>'  .
+					'<p></p><p>Note: The filter button (<span class="dashicons dashicons-filter"></span>) does <strong>NOT</strong> limit deletions.</p>' .
 					'<p>Type "CONFIRM" (all caps) to confirm delete.</p>' .
 					'<input id="confirm_activities_action" name="confirm_activities_action" placeholder="confirm . . ." value=""/>' .
 					'<p><strong>Once in progress, this action cannot be cancelled or undone.</strong></p>
@@ -197,9 +195,7 @@ class WIC_List_Activity extends WIC_List_Parent {
 		// add hidden html for use within popup
 		$button.= '<div class="list-popup-wrapper">
 				<div id="reassign_activities_dialog" title="Reassign ' . self::activity_plural_phrase ( $wic_query->found_count ) . ' to a new issue." class="ui-front">' . 
-					'<p></p><p>Note: ' .
-					('issue' == $search_type ? 'The filter button (<span class="dashicons dashicons-filter"></span>) does <strong>NOT</strong> limit reassignment.  However, a' : 'A' ) . 'ctivity records that 
-					are derived from front-end Wordpress comments will not be reassigned.</p>'  .
+					'<p></p><p>Note: The filter button (<span class="dashicons dashicons-filter"></span>) does <strong>NOT</strong> limit reassignment.</p>' . 
 					'<p>Select an issue to reassign activities to and then type "CONFIRM" (all caps) to confirm.</p>' .
 					$issue_control->form_control() .
 					'<p></p>' .
