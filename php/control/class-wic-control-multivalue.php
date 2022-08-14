@@ -19,17 +19,6 @@ class WIC_Control_Multivalue extends WIC_Control_Parent {
 		$this->value = array();
 	}		
 	
-	protected function set_blank_first_row () { // called in search control set up
-		// here initializing the first row of the multi-value array -- field slug for the multi value is the class of the rows
-		$class_name = 'WIC_Entity_' . $this->field_slug; // note -- class_name is not case sensitive, but autoloader looks from WIC_ (sic) 
-		$args = array(
-			'instance' => '0'		
-		);
-		// each control within the new row object will have its own plain field_slug from the  entity dictionary, 
-		// BUT field_slug will be wrapped with the array location of the field slug -- Multivalue slug and row number
-		// this happens in parent::initialize_default_values when $instance is passed as non-empty string;
-		$this->value[] = new $class_name( 'initialize', $args );
-	}
 
 	/*
 	* In WIC_Control_Parent, set_value just passes the value through, but in this multivalue context have to create the whole array of objects
@@ -47,7 +36,7 @@ class WIC_Control_Multivalue extends WIC_Control_Parent {
 		$instance_counter = 0;
 		foreach ( $value as $key=>$form_row_array ) {
 			$args = array (
-				'instance' => strval( $instance_counter ),
+				'instance' => strval( $instance_counter ), // note that strval is especially critical in 8.0 to avoid loose equality of 0 to empty string
 				'form_row_array' => $form_row_array, // have to pass whole row, since can't assume $_POST numbering is the same							
 			);
 			if ( strval($key) != 'row-template' ) { // skip the template row created by all multivalue fields
@@ -63,17 +52,17 @@ class WIC_Control_Multivalue extends WIC_Control_Parent {
 					// need to test whether row coming back has anything in it.
 					$values_set = false;
 					// test each value in the row
-					foreach ( $form_row_array as $value ){
-						if ( is_array ( $value ) ) { // if value is array, need to see if array has anything in it ( blank array is not an empty string )
-							if ( count ( $value  ) > 0 ) {  // theoretically?, it could be a zero length array, in which case, ignore 
-								foreach ( $value as $array_item ) { // could definitely have blank values, so need to see at least one
+					foreach ( $form_row_array as $column_value ){ // corrected iterator name from $value to $column_value (was harmlessly overwriting the function input $value)
+						if ( is_array ( $column_value ) ) { // if value is array, need to see if array has anything in it ( blank array is not an empty string )
+							if ( count ( $column_value  ) > 0 ) {  // theoretically?, it could be a zero length array, in which case, ignore 
+								foreach ( $column_value as $array_item ) { // could definitely have blank values, so need to see at least one
 									if ( '' < $array_item ) {
 										$values_set = true;			
 									}								
 								}							
 							}							
 						} else { // if value is scalar, then nonblank is enough
-							if ( '' < $value ) {
+							if ( '' < $column_value ) {
 								$values_set = true;							
 							}						
 						} 

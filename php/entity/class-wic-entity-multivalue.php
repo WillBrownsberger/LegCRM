@@ -67,7 +67,8 @@ abstract class WIC_Entity_Multivalue extends WIC_Entity_Parent {
 			$error =  $wic_access_object->explanation . ' -- is there a duplicate key in multivalue row? ';
 		} else {
 			$error = '';
-			if ( '' == $this->data_object_array['ID']->get_value() ) { // then just did a save, so . . .
+			// line below updated to add 0 test because 0 != '' in PHP 8.0 https://www.php.net/manual/en/migration80.incompatible.php
+			if ( '' == $this->data_object_array['ID']->get_value() || 0 == $this->data_object_array['ID']->get_value() ) { // then just did a save, so . . .
 				$this->data_object_array['ID']->set_value( $wic_access_object->insert_id );
 			}
 		}		

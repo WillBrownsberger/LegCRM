@@ -261,9 +261,14 @@ class WIC_DB_Access_WIC Extends WIC_DB_Access {
 			$set_value_array[] = get_office();
 		}
 
-		if ( $entity_id > '' ) {
-			$set_value_array[] = $entity_id; // tag entity ID on to end of array (will not be present in save cases, since is a readonly field)
-		}	// see setup in WIC_CONTROL_Parent::create_update_clause
+		if ( $entity_id > 0 ) { 
+			/*
+			* non-zero in update case; can be empty string or string zero in save case; in php 8, 0 != '' but 0 == '0';
+			* https://www.php.net/manual/en/migration80.incompatible.php
+			* see setup in WIC_CONTROL_Parent::create_update_clause -- does issue an update clause even though ID is readonly
+			*/ 
+			$set_value_array[] = $entity_id; // tag entity ID on to end of array -- non-zero and used in update case
+		}	
 		return  array (
 			'set_clause_with_placeholders' => $set_clause_with_placeholders,
 			'insert_string' => $insert_string,

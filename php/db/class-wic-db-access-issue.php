@@ -257,7 +257,7 @@ class WIC_DB_Access_Issue  {
 			$possible_values = array ( '', '0', '1');
 			foreach ( $possible_values as $value ) {
 				if ( intval($result[0]->{'reply' . $value }) > 0) {
-					if ( $value != '') {
+					if ( $value != '') { // OK before and after 8.0 because string zero never equalled empty
 						$return_array[] = $value;
 					} else {
 						$return_array[] = 'blank';

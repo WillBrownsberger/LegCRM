@@ -56,6 +56,7 @@ abstract class WIC_Control_Parent {
 		// note that the entity name for a row object in a multivalue field is the same as the field_slug for the multivalue field
 		// if this is an instance set slug up for it to be handled as a subarray in $_POST
 		$this->field_slug_base = $field_slug;
+		// Note the following line is OK in 8.0 because $instance is always a string -- SEE WIC_Control_Multivalue:set_value
 		$this->field_slug  = '' == $instance ? $field_slug : $entity . '[' . $instance . ']['. $field_slug . ']'; 
 		$this->field_slug_css = str_replace( '_', '-', $field_slug );
 		$this->field_slug_search = $field_slug; // copy modifiable for advanced search field swapping
@@ -281,6 +282,7 @@ abstract class WIC_Control_Parent {
 	******/
 	public function create_search_clause () {
 		
+		// values passed to this appear to be all strings, so no 8.0 issue.
 		if ( '' == $this->value || 1 == $this->transient ) {
 			return ('');		
 		}

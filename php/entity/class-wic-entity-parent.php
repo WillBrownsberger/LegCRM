@@ -91,7 +91,7 @@ abstract class WIC_Entity_Parent {
 		// initialize_data_object_array as field_slug => control object 
 		foreach ( $this->fields as $field ) { 
 			$this->data_object_array[$field->field_slug] = WIC_Control_Factory::make_a_control( $field->field_type );
-			$this->data_object_array[$field->field_slug]->initialize_default_values(  $this->entity, $field->field_slug, $this->entity_instance );
+			$this->data_object_array[$field->field_slug]->initialize_default_values( $this->entity, $field->field_slug, $this->entity_instance );
 		}		
 	}
 
@@ -99,7 +99,7 @@ abstract class WIC_Entity_Parent {
 
 		$this->initialize_data_object_array();
 
-		foreach ( $this->fields as $field ) {  	
+		foreach ( $this->fields as $field ) {
 			if ( isset ( $_POST[$field->field_slug] ) ) {		
 				$this->data_object_array[$field->field_slug]->set_value( $_POST[$field->field_slug] );
 			} else {
@@ -315,7 +315,7 @@ abstract class WIC_Entity_Parent {
 	protected function form_save_update () {
 		// populate the array from the submitted form
 		$this->populate_data_object_array_from_submitted_form();
-		$save = ( 0 == $this->data_object_array['ID']->get_value() );
+		$save = ( 0 == $this->data_object_array['ID']->get_value() || '' == $this->data_object_array['ID']->get_value() ); // 8.0, empty string != 0
 		$form_class = 'WIC_Form_' . $this->entity;
 
 		// return with no changes message if nothing to do
@@ -442,7 +442,7 @@ abstract class WIC_Entity_Parent {
 	}
 	
 	public function get_search_log_id () {
-		return ( $this->search_log_id > '' ? $this->search_log_id : false );
+		return ( $this->search_log_id > 0 ? $this->search_log_id : false ); // https://www.php.net/manual/en/migration80.incompatible.php
 	}
 	
 	public function get_outcome () {

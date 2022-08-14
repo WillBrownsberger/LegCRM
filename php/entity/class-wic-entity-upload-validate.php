@@ -91,7 +91,7 @@ class WIC_Entity_Upload_Validate  {
 				// invoke the control's validation routine -- does not generate errors on empty
 				$error = $control->validate();
 				
-				// invoke required checking -- does generate errors on empty if field is "individual" required, but in 3.0 up, this is only post_title and activity_issue
+				// invoke required checking -- does generate errors on empty if field is "individual" required, this is only post_title and activity_issue
 				// 	-- these are link fields for activity, invalid as links if mapped and missing value
 				// note that phone, email and address fields are all "group" required, so must be present on record to add it online, but not picked up as error by 
 				// 		control->required_check and so can pass through the upload step if missing -- don't intend to force user to have complete file.
@@ -140,7 +140,7 @@ class WIC_Entity_Upload_Validate  {
 				}
 
 				// update "non_empty_count" -- will be captioned as "tested"
-				if ( $required_error || $control->get_value() > '' ) { 	
+				if ( $required_error || $control->get_value() > '' ) { // since 8.0, 0 will be counted as a supplied value here . . . acceptable behavior
 					$column_map->$column->non_empty_count++;
 				}
 				

@@ -9,9 +9,8 @@ class WIC_Control_Birth_Year extends WIC_Control_Parent {
 	public function sanitize() {  
 		$this->value 		= $this->value 	> '' ? utf8_string_no_tags( $this->value ) 	: '';
 	}
-	/*
-	* no error message for bad date, but will fail a required test 
-	*/   
+
+	   
 	public function validate () {
 		if ( $this->value && ! is_numeric ( $this->value ) ) {
 			return "Birth year should be a number.";

@@ -333,7 +333,7 @@ class WIC_DB_Access_Advanced_Search Extends WIC_DB_Access {
 				'constituent_having' == $row_type && 
 				// no having clause for activity search; having applies to the rollup of activity
 				('constituent' == $primary_search_entity || 'issue' == $primary_search_entity ) && 
-				// in all cases disregarding blank value -- but 0 is OK; 0 > '';
+				// in all cases disregarding blank value -- but 0 is OK; 0 > ''; // php 8 makes this true; 
 				'' < $value 
 				) { 
 				// determine having connector

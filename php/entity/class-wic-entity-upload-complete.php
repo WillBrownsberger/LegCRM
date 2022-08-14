@@ -509,10 +509,10 @@ class WIC_Entity_Upload_Complete  {
 							///if ( $control->is_upload_dedup() ) { // discarded dedup flag
 							if ( in_array( $field_slug, array('constituent_id', 'address_type', 'email_type','phone_type') ) ) { // use dedup fields for searching (ONLY Type and ID )
 
-								if ( $control->get_value() > '' ) {
+								if ( $control->get_value() > '' ) { // this is correct in 8.0 -- 0 could be valid type value and constituent_id ***should*** never be zero at this point
 									$query_array = array_merge ( $query_array, $control->create_search_clause () );
 								}
-							} elseif ( $control->get_value() > '' ) { // use non-dedup fields to test if have data 
+							} elseif ( $control->get_value() > 0 ) { // don't consider 0 to be valid value -- need to assert this, not just assert non-empty, since php 8.0
 								$all_data_missing_for_entity = false;
 							}
 						} 
