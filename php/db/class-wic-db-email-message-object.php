@@ -305,6 +305,9 @@ class WIC_DB_Email_Message_Object {
 	*   in taking the html into a dom and spitting it back out, the function also removes all comments including outlook conditional comments
 	*/
 	public static function strip_html_head( $html ) {
+		if ( $html =='') {
+			      return '';
+			}
 		/*
 		* see comments to http://php.net/manual/en/domdocument.construct.php -- optional declaration of character code in the constructor does not control loadHTML; unsure on version declaration, so go with defaults
 		*/
@@ -322,7 +325,8 @@ class WIC_DB_Email_Message_Object {
 		*   -- if not flattened, might not be UTF-8/ascii so some risk remains . . . 
 		*   -- most likely no charset case is plain text which in my universe of correspondents is likely ascii or utf-8 so risk is low
 		*/
-		$converted_html = mb_convert_encoding( $html, 'HTML-ENTITIES', 'UTF-8' );
+		$converted_html = htmlspecialchars_decode(htmlentities( $html,  ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401, 'UTF-8' ),ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401);
+		// encodes all possible html entities then decodes html special characters
 		if ( ! @$dom->loadHTML( $converted_html  ) ) { // suppress complaints about the validity of the html, but act on full error
 			return '<h3>Malformed HTML message. Could not safely present.</h3>';
 		} 
@@ -354,7 +358,8 @@ class WIC_DB_Email_Message_Object {
 		foreach ( $body_elements as $body ) {
 			// have UTF-8 characters, but re-encode them for safe presentation in other charsets
 			// does not encode html control tags <>'"
-			$clean_html =  mb_convert_encoding( $dom->saveHTML( $body ), 'HTML-ENTITIES', 'UTF-8');
+			// encodes all possible html entities then decodes html special characters
+			$clean_html =  htmlspecialchars_decode(htmlentities( $dom->saveHTML( $body ), ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401, 'UTF-8' ),ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401);
 			// convert any php tag opening/closing to entities -- avoid saving executable php
 			$clean_html = str_replace (  array ('<?', '?>'), array ('&lt;?', '?&gt;'), $clean_html );
 
