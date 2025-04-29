@@ -29,7 +29,10 @@ abstract class WIC_DB_Access {
 	public $retrieve_limit;		// page length ( number of items retrieved per page or max retrieval if not paging );
 	public $list_page_offset; 	// page offset in list
 	protected $entity_is_office_specific;
-	
+	// added to eliminate 8.4 notifications
+	public $showing_count;
+	public $found_count_real;
+ 	public $list_result;
 
 	public function __construct ( $entity ) { 
 		$this->entity = $entity;

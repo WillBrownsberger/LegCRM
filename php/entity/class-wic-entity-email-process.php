@@ -106,28 +106,28 @@ class WIC_Entity_Email_Process  {
 				?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?
 				" // 19 parameters
 				,
-				array(
-					// need to explicitly convert some characters to utf8
-					get_office(), //@OFFICE smallint,
-					utf8_encode($message->email_address),//@emailAddress varchar(200),
-					utf8_encode(ucfirst( strtolower ( $message->first_name) )),//@firstName varchar(50),
-					utf8_encode(ucfirst( strtolower ( $message->last_name) )),//@lastName varchar(50),
-					utf8_encode($message->address_line), //@addressLine varchar(100),
-					utf8_encode($message->city), // @city varchar(50),-- not in lookup
-					utf8_encode($message->state), // @state varchar(50), -- not in lookup
-					$message->zip, //@zip varchar(10),
-					$message->phone_number, //@phone
-					$message->assigned_constituent,	//@constituentId bigint, (not validated yet; to be validated in saveConstituentActivity)
-					0,	//@in_or_out bit, 
-					$working_pro_con, // @pro_con varchar(1)
-					$working_issue, // @issue int
-					$message->email_date_time, //@activity_date datetime2(0), will be converted from utc to eastern
-					utf8_encode($activity_note), // @activity_note varchar(max)
-					$message->is_my_constituent, // @is_my_constituent varchar(1)
-					$message->inbox_image_id, // @related_inbox_image_record  int, 
-					0, // @related_outbox_record int,
-					get_current_user_id() // @current_user_id int
-				)
+                array(
+                    // removed utf8_encode call 
+                    get_office(), //@OFFICE smallint,
+                    $message->email_address,//@emailAddress varchar(200),
+                    ucfirst( strtolower ( $message->first_name) ),//@firstName varchar(50),
+                    ucfirst( strtolower ( $message->last_name) ),//@lastName varchar(50),
+                    $message->address_line, //@addressLine varchar(100),
+                    $message->city, // @city varchar(50),-- not in lookup
+                    $message->state, // @state varchar(50), -- not in lookup
+                    $message->zip, //@zip varchar(10),
+                    $message->phone_number, //@phone
+                    $message->assigned_constituent, //@constituentId bigint, (not validated yet; to be validated in saveConstituentActivity)
+                    0,  //@in_or_out bit,
+                    $working_pro_con, // @pro_con varchar(1)
+                    $working_issue, // @issue int
+                    $message->email_date_time, //@activity_date datetime2(0), will be converted from utc to eastern
+                    $activity_note, // @activity_note varchar(max)
+                    $message->is_my_constituent, // @is_my_constituent varchar(1)
+                    $message->inbox_image_id, // @related_inbox_image_record  int,
+                    0, // @related_outbox_record int,
+                    get_current_user_id() // @current_user_id int
+                )
 			);
 
 

@@ -240,28 +240,28 @@ class WIC_Entity_Email_Send {
 						?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?
 					" // 19 parameters
 					,
-					array(
-						// need to explicitly convert some characters to utf8
-						get_office(), //@OFFICE smallint,
-						utf8_encode($constituent[1]), // @emailAddress varchar(200),
-						utf8_encode($save_first_name), // @firstName varchar(50),
-						utf8_encode($save_last_name), // @lastName varchar(50),
-						'', // @addressLine varchar(100),
-						'', // @city varchar(50),-- not in lookup
-						'', // @state varchar(50), -- not in lookup
-						'', // @zip varchar(10),
-						'', // @phone
-						$save_constituent_id ,	// @constituentId bigint,
-						1,	// @in_or_out bit, 
-						$message_object->pro_con, // @pro_con varchar(1)
-						$message_object->issue, // @issue int
-						current_time("Y-m-d"), // @activity_date datetime2(0),
-						utf8_encode($save_activity_note), // @activity_note varchar(max)
-						'', // @is_my_constituent varchar(1)
-						0, // @related_inbox_image_record  int, 
-						$outgoing_message_id, // @related_outbox_record int 
-						get_current_user_id() // @current_user_id int
-					)
+                    array(
+                        // dropped utf_encode for 8.4
+                        get_office(), //@OFFICE smallint,
+                        $constituent[1], // @emailAddress varchar(200),
+                        $save_first_name, // @firstName varchar(50),
+                        $save_last_name, // @lastName varchar(50),
+                        '', // @addressLine varchar(100),
+                        '', // @city varchar(50),-- not in lookup
+                        '', // @state varchar(50), -- not in lookup
+                        '', // @zip varchar(10),
+                        '', // @phone
+                        $save_constituent_id ,  // @constituentId bigint,
+                        1,  // @in_or_out bit,
+                        $message_object->pro_con, // @pro_con varchar(1)
+                        $message_object->issue, // @issue int
+                        current_time("Y-m-d"), // @activity_date datetime2(0),
+                        $save_activity_note, // @activity_note varchar(max)
+                        '', // @is_my_constituent varchar(1)
+                        0, // @related_inbox_image_record  int,
+                        $outgoing_message_id, // @related_outbox_record int
+                        get_current_user_id() // @current_user_id int
+                    )
 				);
 				if ( 
 					! $sqlsrv->success || // some exceptions are caught, so may show success on failure

@@ -42,6 +42,8 @@ abstract class WIC_Control_Parent {
 	protected $label_class  = 'wic-label';
 	protected $field_slug_search = '';
 	protected $entity_slug_search = '';
+	protected $field_slug_css ='';
+    protected $field_slug_update = '';
 	/***
 	*
 	*		Field child classes may override validation, sanitization

@@ -9,6 +9,8 @@
 
 class WIC_Form_Activity extends WIC_Form_Parent  {
 
+	public $entity='';
+
 	public function __construct () {
 		$this->entity = 'activity';
 	}

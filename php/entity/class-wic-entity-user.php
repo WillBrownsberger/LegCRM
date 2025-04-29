@@ -14,7 +14,7 @@ class WIC_Entity_User extends WIC_Entity_Multivalue {
 	private $max_capability; 
 	private $preferences = array();
 	// other user list cached for selectmenus
-	private $office_user_array;
+	private $user_array; // name corrected for 8.4
 
 	// serves as both standard entity for CRUD support and as reference entity, but does not need special construct
 	// take action_requested on 'load'; do form with instance if new form, but in the form case won't have have "instance"

@@ -18,6 +18,7 @@ class WIC_Form_Multivalue extends WIC_Form_Parent  {
 	
 	
 	protected $entity = '';
+	protected $entity_instance='';
 	
 	public function __construct ( $entity, $instance ) {
 		$this->entity = $entity;
