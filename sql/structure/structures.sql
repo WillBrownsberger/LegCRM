@@ -1,8 +1,9 @@
 
+-- line below is intended to create error so this script is not run unintentionally
 * * * COMMENT OUT THIS LINE IF YOU REALLY MEAN TO RUN THIS WHOLE PROC AND BLOW AWAY THE DATABASE * * * 
 -- COLLATION SHOULD BE Latin1_General_100_CI_AS_SC_UTF8 SO THAT EXISTING UTF8 SPECIAL CHARACTERS DATA WILL BE HANDLED PROPERLY
-DROP DATABASE IF EXISTS legcrm1;
-CREATE DATABASE legcrm1 COLLATE Latin1_General_100_CI_AS_SC_UTF8;
+-- DROP DATABASE IF EXISTS legcrm1;
+--CREATE DATABASE legcrm1 COLLATE Latin1_General_100_CI_AS_SC_UTF8;
 
 -- USE OF NULL-- STRICTLY TYPED IN SQL SERVER:
 --     NECESSARY IDENTITY OR LINK VALUES ARE NOT NULL NO DEFAULT SO FAILURE TO SUPPLY IS A READILY IDENTIFIABLE FATAL PROGRAMMING ERROR
@@ -14,7 +15,7 @@ CREATE DATABASE legcrm1 COLLATE Latin1_General_100_CI_AS_SC_UTF8;
 --			Some dates may be app supplied on save,  in which case not null is just program integrity check
 --     OFFICE AND UPDATED LOG FIELDS ARE NULLABLE BUT ENFORCED BY sqlsrv PROCS
 --     NOTE: default for NULL|NOT NULL is NULL
-USE legcrm1;
+--USE legcrm1; (note usually in an Azure configuration accessed by server studio, you will choose database through connection)
 
 
 DROP TABLE IF EXISTS activity;
@@ -55,8 +56,9 @@ CREATE TABLE activity (
 -- recommendation from azure
 CREATE NONCLUSTERED INDEX [nci_wi_activity_date_with_include] ON [dbo].[activity] ([activity_date]) INCLUDE ([activity_type], [constituent_id], [issue], [pro_con])
 -- FOLLOWING TWO LINES NOT TESTED -- USED WIZARD IN PRODUCTION
--- CREATE FULLTEXT CATALOG [activity_note_catalog] WITH ACCENT_SENSITIVITY = ON
--- CREATE FULLTEXT INDEX ON activity (activity_note) KEY INDEX PK__activity__3214EC279BB922E6 ON [activity_note_catalog] 
+CREATE FULLTEXT CATALOG [activity_note_catalog] WITH ACCENT_SENSITIVITY = ON
+-- following line needs to be run individually with primary key identifier inserted -- derive by inspecting keys in server studio [PK__activity__3214EC27B66DA524] 
+-- CREATE FULLTEXT INDEX ON activity (activity_note) KEY INDEX [insert here primary key identifier] ON [activity_note_catalog];
 --
 -- Table structure for table address
 --
@@ -378,8 +380,8 @@ CREATE TABLE issue (
 -- azure performance recommendation
 CREATE NONCLUSTERED INDEX [nci_wi_issue_OFFICE_wic_live_issue_post_type_plus] ON [dbo].[issue] ([OFFICE], [wic_live_issue], [post_type]) INCLUDE ([issue_staff], [post_title], [reply], [reply0], [reply1], [review_date]);
 CREATE FULLTEXT CATALOG [post_content_catalog] WITH ACCENT_SENSITIVITY = ON
--- following line needs to be run with primary key identifier specified (point to ID primary key)
---CREATE FULLTEXT INDEX ON issue (post_title,post_content) KEY INDEX [PK__issue__3214EC276F5EA4D3] ON [post_content_catalog]
+-- following line needs to be run individually with primary key identifier specified (point to ID primary key of form [PK__issue__3214EC276F5EA4D3]
+--CREATE FULLTEXT INDEX ON issue (post_title,post_content) KEY INDEX [insert identifier here] ON [post_content_catalog]
 
 
 --
