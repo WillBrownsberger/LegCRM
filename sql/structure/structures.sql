@@ -55,8 +55,8 @@ CREATE TABLE activity (
 -- recommendation from azure
 CREATE NONCLUSTERED INDEX [nci_wi_activity_date_with_include] ON [dbo].[activity] ([activity_date]) INCLUDE ([activity_type], [constituent_id], [issue], [pro_con])
 -- FOLLOWING TWO LINES NOT TESTED -- USED WIZARD IN PRODUCTION
-CREATE FULLTEXT CATALOG [activity_note_catalog] WITH ACCENT_SENSITIVITY = ON
-CREATE FULLTEXT INDEX ON activity (activity_note) KEY INDEX PK__activity__3214EC279BB922E6 ON [activity_note_catalog] 
+-- CREATE FULLTEXT CATALOG [activity_note_catalog] WITH ACCENT_SENSITIVITY = ON
+-- CREATE FULLTEXT INDEX ON activity (activity_note) KEY INDEX PK__activity__3214EC279BB922E6 ON [activity_note_catalog] 
 --
 -- Table structure for table address
 --
@@ -280,7 +280,6 @@ CREATE TABLE inbox_image (
   CREATE INDEX ix_inbox_image_OFFICE_has_attachments_in_inbox ON inbox_image (OFFICE,no_longer_in_server_folder,to_be_moved_on_server,has_attachments);
   CREATE INDEX ix_inbox_image_OFFICE_now_stamp_of_last_sync_on_server ON inbox_image (OFFICE,no_longer_in_server_folder,now_stamp_of_last_sync);
   CREATE INDEX ix_inbox_image_for_get_next_to_parse ON inbox_image(folder_uid, no_longer_in_server_folder, to_be_moved_on_server, ID );
-  CREATE INDEX ix_inbox_image_for_inbox_load ON inbox_image (			OFFICE, no_longer_in_server_folder,	to_be_moved_on_server, folder_uid, subject_is_final, inbox_defined_reply_is_final, mapped_issue, assigned_subject, email_date_time);
   CREATE UNIQUE INDEX ix_inbox_image_graph_office_email_message_id ON inbox_image (office_email,extended_message_id);
   -- azure performance recommendation
   CREATE NONCLUSTERED INDEX [nci_wi_inbox_image_OFFICE_office_email_plus_leaf] ON [dbo].[inbox_image] ([OFFICE], [office_email]) INCLUDE ([extended_message_id]);
