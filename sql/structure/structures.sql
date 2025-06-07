@@ -55,9 +55,8 @@ CREATE TABLE activity (
   CREATE INDEX ix_activity_OFFICE_issue_activity_date on activity (office, issue, activity_date ); 
 -- recommendation from azure
 CREATE NONCLUSTERED INDEX [nci_wi_activity_date_with_include] ON [dbo].[activity] ([activity_date]) INCLUDE ([activity_type], [constituent_id], [issue], [pro_con])
--- FOLLOWING TWO LINES NOT TESTED -- USED WIZARD IN PRODUCTION
 CREATE FULLTEXT CATALOG [activity_note_catalog] WITH ACCENT_SENSITIVITY = ON
--- following line needs to be run individually with primary key identifier inserted -- derive by inspecting keys in server studio [PK__activity__3214EC27B66DA524] 
+-- following line needs to be run individually with primary key identifier inserted -- derive by inspecting key in server studio [PK__activity__3214EC27B66DA524] 
 -- CREATE FULLTEXT INDEX ON activity (activity_note) KEY INDEX [insert here primary key identifier] ON [activity_note_catalog];
 --
 -- Table structure for table address
@@ -380,7 +379,7 @@ CREATE TABLE issue (
 -- azure performance recommendation
 CREATE NONCLUSTERED INDEX [nci_wi_issue_OFFICE_wic_live_issue_post_type_plus] ON [dbo].[issue] ([OFFICE], [wic_live_issue], [post_type]) INCLUDE ([issue_staff], [post_title], [reply], [reply0], [reply1], [review_date]);
 CREATE FULLTEXT CATALOG [post_content_catalog] WITH ACCENT_SENSITIVITY = ON
--- following line needs to be run individually with primary key identifier specified (point to ID primary key of form [PK__issue__3214EC276F5EA4D3]
+-- following line needs to be run individually with primary key identifier specified (point to ID primary key of form [PK__issue__3214EC276F5EA4D3])
 --CREATE FULLTEXT INDEX ON issue (post_title,post_content) KEY INDEX [insert identifier here] ON [post_content_catalog]
 
 
