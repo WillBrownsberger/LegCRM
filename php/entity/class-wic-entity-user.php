@@ -115,6 +115,10 @@ class WIC_Entity_User extends WIC_Entity_Multivalue {
 		return $this->id;
 	}
 
+	public function get_email() {
+		return $this->email;
+	}
+
 	public function get_display_name() {
 		return  ( isset ( $this->name ) && $this->name > '' ) ? $this->name : $this->email ;
 	}

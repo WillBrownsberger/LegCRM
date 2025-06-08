@@ -228,7 +228,7 @@ class WIC_Admin_Setup {
 		if ( ! $current_user->get_id() ) 	 {
 			legcrm_finish (  
 				'<div id="wic-unassigned-message">
-					<h3>Based on your logged in email address, '. $current_user->email . ', you have been permitted to reach the legislative CRM, but you have not been set up as a user in the CRM.</h3>
+					<h3>Based on your logged in email address, '. $current_user->get_email() . ', you have been permitted to reach the legislative CRM, but you have not been set up as a user in the CRM.</h3>
 					<p>If you need access, consult your supervisor and request to be set up.</p>
 					<p>If you are sure you are already set up and this response persists when you retry after a minute or two, contact information services. The response may be due to a database misconfiguration or outage.</p>
 				</div>'
@@ -253,6 +253,7 @@ class WIC_Admin_Setup {
 	*/
 	public static function wic_create_nonce( $attachment_id=false ) {
 		
+
 		// check for nonce key 
 		if ( !defined('NONCE_KEY') || !NONCE_KEY ) {
 			legcrm_finish( 'NONCE_KEY Undefined -- contact system administrator to complete configuration' );
@@ -263,7 +264,7 @@ class WIC_Admin_Setup {
 		}
 
 		// session and user variables tested at startup
-		return substr( hash_hmac( 'md5', $_COOKIE['AppServiceAuthSession'] . $_SERVER['REMOTE_USER'] . ( $attachment_id ? $attachment_id : ''),  NONCE_KEY ), -25, 20 );
+		return substr( hash_hmac( 'md5', $_COOKIE['AppServiceAuthSession'] . get_azure_user_direct() . ( $attachment_id ? $attachment_id : ''),  NONCE_KEY ), -25, 20 );
 
 	}
 
