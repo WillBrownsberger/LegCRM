@@ -1,73 +1,48 @@
 <?php
 /*
-*
-* define version
-*
+* This version number has no code consequences; except that if not defined (as in the middle of testing), styles and scripts carry a time stamp as version number
 */
-define('LEGCRM_VERSION','0.0.1');
+define('LEGCRM_VERSION','1.0.0'); // renumbered for PHP 8.4
 /*
 *
+*
+* Review this configuration file and make changes to reflect your deployment
+*
+* It is designed to support three sets of environment parameters (domain and database) for different deployments -- LOCAL, TEST, PROD
+*
+* Further below, it also defines additional parameters that may be constant across deployments
+*
+**************
 * ENVIRONMENT SWITCH TO BE SET AT DEPLOYMENT
 *
 */
-define('CRM_ENVIRONMENT', 'PROD'); // valid values are LOCAL, TEST, PROD
+define('CRM_ENVIRONMENT', 'PROD'); // valid values are LOCAL, TEST, PROD (these select alternative domain and database configurations as implemented below)
+/*
+*
+*/
 if (extension_loaded('xdebug')) {
 	// comment out the following line for maximual debugging information
 	xdebug_disable();
 }
 /*
+* NOTES ABOUT VALUES OF PARAMETERS
+*
+* OVERRIDE_AZURE_SECURITY_FOR_TESTING -- value should be false or the email ID of a user configured in the database (likely the initial user); 
+* Should be set to false in production as this waives all signin authentication
+*
+* SITE_DOMAIN is the front end php web app domain name
+* SITE_USING_SSL should generally be set to true (create SSL certificate and bind to domain)
+* REGARDING CONNECTION OPTIONS, SEE https://learn.microsoft.com/en-us/sql/connect/php/connection-options
+* APP_SQLSRV_NAME -- the database name -- default is legcrm1
+* APP_SQLSRV_HOST -- the data base host; if running production azure, this will be of the form ''tcp:voteb.database.windows.net,1433' (1433 is the default port) )
+* 
+* APP_SQLSRV_UID, APP_SQLSRV_PSWD can be the server administrator or a database user, using sql uid/psw authentication
 *
 * LOCAL TESTING CONFIG
 *
 * using windows local authentication
 */
-if ( 'LOCAL' == CRM_ENVIRONMENT ) {
-	define('OVERRIDE_AZURE_SECURITY_FOR_TESTING', 'tester@yourdomain.org');
-	define( 'SITE_DOMAIN', '192.168.1.11'); 
-	define( 'SITE_USING_SSL', false );
-	define( 'SQL_ENCRYPT', 0 ); // communication btw app and database server
-	define( 'APP_SQLSRV_NAME', 'legcrm1' );
-	define( 'APP_SQLSRV_HOST', 'localhost' );
-	define( 'APP_SQLSRV_UID', '' ); 
-	define( 'APP_SQLSRV_PSWD', '');	
-	define( 'ERROR_LOG_QUERIES', false );
-	define( 'WP_ISSUES_CRM_MAP_DATA_LAYERS',
-		array (
-			array( 'layerId' =>'senate', 'layerTitle' => 'Senate Districts', 'layerURL' => 'https://your_senatedistricts.geojson', 'link' => 'URL', 'featureTitle' => 'SENATOR', 'legend' => 'SEN_DIST', 'strokeColor' => '#0000ff', 'strokeWeight' => 3, 'strokeOpacity' => .2),
-			array( 'layerId' =>'house', 'layerTitle' => 'House Districts', 'layerURL' => 'https://your_housedistrict.geojson',  'link' => 'URL', 'featureTitle' => 'REP', 'legend' => 'REP_DIST', 'strokeColor' => '#ff0000', 'strokeWeight' => 2, 'strokeOpacity' => .5),
-			array( 'layerId' =>'muni', 'layerTitle' => 'Municipalities', 'layerURL' => 'https://your_municipalities.geojson', 'link' => false, 'featureTitle' => 'TOWN', 'legend' => 'POP2010', 'strokeColor' => '#444', 'strokeWeight' => 4, 'strokeOpacity' => .2),
-		)
-	); 
-	define( 'WIC_USER_NAME_FOR_POSTAL_ADDRESS_INTERFACE', 'xxxxxxxxx');
-	define( 'WIC_GOOGLE_MAPS_API_KEY', 'xxxxxxxxxx');
-	define( 'WIC_GEOCODIO_API_KEY', 'xxxxxxxxx');
-/*
-*
-* AZURE TESTING CONFIG 
-*
-* using sql uid/psw authentication
-*/
-} elseif ( 'TEST' == CRM_ENVIRONMENT )  {
-	define( 'OVERRIDE_AZURE_SECURITY_FOR_TESTING', false);
-	define( 'SITE_DOMAIN', 'your_project.azurewebsites.net'); 
-	define( 'SITE_USING_SSL', true );
-	define( 'SQL_ENCRYPT', 1 ); // communication btw app and database server
-	define( 'APP_SQLSRV_NAME', 'name' );
-	define( 'APP_SQLSRV_HOST', 'tcp:host,1433' );
-	define( 'APP_SQLSRV_UID', 'uid' ); 
-	define( 'APP_SQLSRV_PSWD', 'password');
-	define( 'ERROR_LOG_QUERIES', false );
-	define( 'WP_ISSUES_CRM_MAP_DATA_LAYERS',
-		array (
-			array( 'layerId' =>'senate', 'layerTitle' => 'Senate Districts', 'layerURL' => 'https://your_senatedistricts.geojson', 'link' => 'URL', 'featureTitle' => 'SENATOR', 'legend' => 'SEN_DIST', 'strokeColor' => '#0000ff', 'strokeWeight' => 3, 'strokeOpacity' => .2),
-			array( 'layerId' =>'house', 'layerTitle' => 'House Districts', 'layerURL' => 'https://your_housedistrict.geojson',  'link' => 'URL', 'featureTitle' => 'REP', 'legend' => 'REP_DIST', 'strokeColor' => '#ff0000', 'strokeWeight' => 2, 'strokeOpacity' => .5),
-			array( 'layerId' =>'muni', 'layerTitle' => 'Municipalities', 'layerURL' => 'https://your_municipalities.geojson', 'link' => false, 'featureTitle' => 'TOWN', 'legend' => 'POP2010', 'strokeColor' => '#444', 'strokeWeight' => 4, 'strokeOpacity' => .2),
-		)
-	); 
-	define( 'WIC_USER_NAME_FOR_POSTAL_ADDRESS_INTERFACE', 'xxxxxxxxx');
-	define( 'WIC_GOOGLE_MAPS_API_KEY', 'xxxxxxxxxx');
-	define( 'WIC_GEOCODIO_API_KEY', 'xxxxxxxxx');
-} elseif ( 'PROD' == CRM_ENVIRONMENT )  {
+if ( 'PROD' == CRM_ENVIRONMENT ) {
 /* 
 * 
 * DEFINE PRODUCTION PARAMETERS HERE 
@@ -75,12 +50,12 @@ if ( 'LOCAL' == CRM_ENVIRONMENT ) {
 * NOTE SHOULD CONSIDER SWITCHING TO ACTIVE DIRECTORY AUTHENTICATION FOR DATABASE ACCESS
 * ON THE OTHER HAND, FIREWALL LIMITS TO DESIGNATED IP ADDRESSES . . . SO BELT AND SUSPENDERS?
 */
-	define( 'OVERRIDE_AZURE_SECURITY_FOR_TESTING', false);
-	define( 'SITE_DOMAIN', 'your_project.azurewebsites.net'); 
+	define( 'OVERRIDE_AZURE_SECURITY_FOR_TESTING', false ); 
+	define( 'SITE_DOMAIN', 'yourdomain.com'); // change this to your domain
 	define( 'SITE_USING_SSL', true );
 	define( 'SQL_ENCRYPT', 1 ); // communication btw app and database server
-	define( 'APP_SQLSRV_NAME', 'name' );
-	define( 'APP_SQLSRV_HOST', 'tcp:host,1433' );
+	define( 'APP_SQLSRV_NAME', 'legcrm1' ); // this is the name of the database can use different name if set up different database
+	define( 'APP_SQLSRV_HOST', 'tcp:host,1433' ); // this is the name of database server -- get this from the connection string for the server
 	define( 'APP_SQLSRV_UID', 'uid' ); 
 	define( 'APP_SQLSRV_PSWD', 'password');
 	define( 'ERROR_LOG_QUERIES', false );
@@ -94,6 +69,19 @@ if ( 'LOCAL' == CRM_ENVIRONMENT ) {
 	define( 'WIC_USER_NAME_FOR_POSTAL_ADDRESS_INTERFACE', 'xxxxxxxxx');
 	define( 'WIC_GOOGLE_MAPS_API_KEY', 'xxxxxxxxxx');
 	define( 'WIC_GEOCODIO_API_KEY', 'xxxxxxxxx');
+/* 
+*
+* At set up continue review below for additional parameters 
+*
+*/
+} elseif ( 'LOCAL' == CRM_ENVIRONMENT )  {
+/*
+* Insert local parameter set here (copy from prod branch)
+*/
+} elseif ( 'TEST' == CRM_ENVIRONMENT )  {
+/*
+* Insert azure test slot parameter set here (copy from prod branch)
+*/
 }
 
 
@@ -105,7 +93,7 @@ if ( 'LOCAL' == CRM_ENVIRONMENT ) {
 *
 * this can be changed any time, which have the effect of invalidating session cookies and stored passwords
 */
-define('NONCE_KEY','insert long string');
+define('NONCE_KEY','insert your own random string -- wTFW7rjs~h*yeCo|f+{|J.,T1R aa1of`||dcpHp?)|Ym`oskF/ZdZ|#t9sK$!9um;KMZ`^^Z$a28gZ*RrSZt1?)*UM!0tf9U+#JaM%Wt]!-:gl+|g,T:.-e>}#O(Vv');
 /* include as long using geojson files */
 define( 'WP_ISSUES_CRM_MAP_DATA_CREDIT', 'For example:  Boundary Layers from <a href="https://www.mass.gov/orgs/massgis-bureau-of-geographic-information" target = "_blank">MassGIS</a> converted using <a href="https://www.macgis.com/" target="_blank">Cartographica</a> and <a href="https://mygeodata.cloud" target="_blank">mygeodata.cloud</a>.');
 /*
