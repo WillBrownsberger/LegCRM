@@ -306,7 +306,7 @@ class WIC_DB_Email_Message_Object {
 	*/
 	public static function strip_html_head( $html ) {
 		if ( $html =='') {
-			      return '';
+			      return ('');
 			}
 		/*
 		* see comments to http://php.net/manual/en/domdocument.construct.php -- optional declaration of character code in the constructor does not control loadHTML; unsure on version declaration, so go with defaults
