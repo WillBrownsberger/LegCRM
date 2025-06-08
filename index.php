@@ -6,10 +6,10 @@
 */
 
 // Absolute path to the root directory. 
-define( 'WWWROOT', __DIR__ . '\\' );
+define( 'WWWROOT', __DIR__ . '/' );
 
 // main load
-require( WWWROOT . 'php\\admin\\load.php');
+require( WWWROOT . 'php/admin/load.php');
 
 // before emitting headers, see if this is a stored file request
 global $wic_admin_navigation;
