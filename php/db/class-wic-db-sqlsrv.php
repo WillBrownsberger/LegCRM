@@ -121,7 +121,7 @@ class WIC_DB_SQLSRV {
                 $errorCode = '';
                 if ( ($errors = sqlsrv_errors() ) != NULL ) {
                     foreach ( $errors as $error ) {  
-                        $errorCode = $error['code']; // the sqlserv error code
+                        $errorCode = $error['code']; // the sqlsrv error code
                         $isTransientError = in_array($errorCode, $arrayOfTransientErrors);
                         if ( $isTransientError ) {
                             break;
@@ -204,7 +204,7 @@ class WIC_DB_SQLSRV {
         $this->conn = false;
     }
 
-    // accepts a parametrized query -- wrapper for sqlserv->query
+    // accepts a parametrized query -- wrapper for sqlsrv->query
     public function query( $query, $args, $rows_on = false ) {
         /*
         *
