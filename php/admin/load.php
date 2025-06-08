@@ -6,7 +6,7 @@
 */
 
 // load config and define autoloader
-include WWWROOT ."legcrm-config.php";
+include WWWROOT . 'legcrm-config.php';
 
 // global functions
 require_once WWWROOT . 'php/function/global_functions.php';
