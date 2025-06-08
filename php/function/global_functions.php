@@ -11,7 +11,7 @@ function get_azure_user_direct() {
 	// check for session variables
 	if ( 
 		!isset ($_COOKIE) || !isset($_COOKIE['AppServiceAuthSession'] ) || !$_COOKIE['AppServiceAuthSession'] ||
-		!isset ($_SERVER) || !isset($_SERVER['REMOTE_USER'] ) || !$_SERVER['REMOTE_USER'] 	
+		!isset ($_SERVER) || ((!isset($_SERVER['REMOTE_USER'] ) || !$_SERVER['REMOTE_USER']) and (!isset($_SERVER['HTTP_X_MS_CLIENT_PRINCIPAL_NAME'] ) || !$_SERVER['HTTP_X_MS_CLIENT_PRINCIPAL_NAME']))
 	) {
 		if ( !defined('OVERRIDE_AZURE_SECURITY_FOR_TESTING') || !OVERRIDE_AZURE_SECURITY_FOR_TESTING ) {
 			header("Location: " . WIC_Admin_Setup::root_url() . ".auth/login/aad" );
@@ -24,8 +24,10 @@ function get_azure_user_direct() {
 	}		
 	if ( defined('OVERRIDE_AZURE_SECURITY_FOR_TESTING') && OVERRIDE_AZURE_SECURITY_FOR_TESTING )  {
 		return OVERRIDE_AZURE_SECURITY_FOR_TESTING;
-	} else {
+	} elseif ( isset($_SERVER['REMOTE_USER'] ) AND $_SERVER['REMOTE_USER']) {
 		return strtolower($_SERVER['REMOTE_USER']);
+	} else {
+		return strtolower($_SERVER['HTTP_X_MS_CLIENT_PRINCIPAL_NAME']);
 	}
 
 }

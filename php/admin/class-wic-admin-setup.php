@@ -228,7 +228,7 @@ class WIC_Admin_Setup {
 		if ( ! $current_user->get_id() ) 	 {
 			legcrm_finish (  
 				'<div id="wic-unassigned-message">
-					<h3>Based on your logged in email address, '. $_SERVER['REMOTE_USER'] . ', you have been permitted to reach the legislative CRM, but you have not been set up as a user in the CRM.</h3>
+					<h3>Based on your logged in email address, '. $current_user->email . ', you have been permitted to reach the legislative CRM, but you have not been set up as a user in the CRM.</h3>
 					<p>If you need access, consult your supervisor and request to be set up.</p>
 					<p>If you are sure you are already set up and this response persists when you retry after a minute or two, contact information services. The response may be due to a database misconfiguration or outage.</p>
 				</div>'

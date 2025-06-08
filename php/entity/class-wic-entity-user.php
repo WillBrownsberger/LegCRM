@@ -29,7 +29,7 @@ class WIC_Entity_User extends WIC_Entity_Multivalue {
 	// populate current_user object
 	protected function load( $args ) { // $args dummy parameter
 
-		$this->email = get_azure_user_direct(); // $_SERVER['REMOTE_USER']
+		$this->email = get_azure_user_direct(); // $_SERVER['REMOTE_USER'] or if not available, $_SERVER['HTTP_X_MS_CLIENT_PRINCIPAL_NAME']
 	
 		// load office list
 		global $sqlsrv;
