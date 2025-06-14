@@ -102,7 +102,7 @@ if ( 'PROD' == CRM_ENVIRONMENT ) {
 *
 * this can be changed any time, which have the effect of invalidating session cookies and stored passwords
 */
-define('NONCE_KEY',getenv('NONCE_KEY')) // USE YOUR FAVORITE RANDOM LONG STRING GENERATOR 
+define('NONCE_KEY',getenv('NONCE_KEY')); // USE YOUR FAVORITE RANDOM LONG STRING GENERATOR 
 /* include as long using geojson files */
 define( 'WP_ISSUES_CRM_MAP_DATA_CREDIT', getenv('WP_ISSUES_CRM_MAP_DATA_CREDIT')); /*For example:  'Boundary Layers from \<a href=\"https\:\/\/www.mass.gov\/orgs\/massgis-bureau-of-geographic-information\" target = \"_blank\"\>MassGIS\<\/a\> converted using \<a href=\"https:\/\/www.macgis.com\/\" target=\"_blank\"\>Cartographica\<\/a\> and \<a href=\"https\:\/\/mygeodata.cloud\" target=\"_blank\"\>mygeodata.cloud\<\/\a\>.'
 /*
