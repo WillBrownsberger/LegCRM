@@ -108,10 +108,9 @@ define( 'WP_ISSUES_CRM_MAP_DATA_CREDIT', getenv('WP_ISSUES_CRM_MAP_DATA_CREDIT')
 /*
 * resource limits
 */
-define('MAX_MESSAGE_SIZE',getenv('define('MAX_MESSAGE_SIZE',getenv('E_KEY') ); // 20000000 OUTLOOK/EXCHANGE LIMIT ATTACHMENTS TO 20MG use this as a limit to processing incoming messages
-') ); // 20000000 OUTLOOK/EXCHANGE LIMIT ATTACHMENTS TO 20MG use this as a limit to processing incoming messages
-define('MAX_FILE_SIZE', getenv('MAX_FILE_SIZE') ); // 40000000 well below batch size limit [right measure?] https://docs.microsoft.com/en-us/sql/sql-server/maximum-capacity-specifications-for-sql-server?view=sql-server-ver15
-ini_set('memory_limit', getenv('memory_limit')); // 128M Still tuning this
+define('MAX_MESSAGE_SIZE', getenv('MAX_MESSAGE_SIZE')); // 20000000 OUTLOOK/EXCHANGE LIMIT ATTACHMENTS TO 20MG use this as a limit to processing incoming messages
+define('MAX_FILE_SIZE',    getenv('MAX_FILE_SIZE'   )); // 40000000 well below batch size limit [right measure?] https://docs.microsoft.com/en-us/sql/sql-server/maximum-capacity-specifications-for-sql-server?view=sql-server-ver15
+ini_set('memory_limit',    getenv('memory_limit'    )); // 128M Still tuning this
 /*
 *
 * set default time zone for date time functions
