@@ -62,7 +62,7 @@ if ( 'PROD' == CRM_ENVIRONMENT ) {
 	define( 'APP_SQLSRV_UID', getenv('APP_SQLSRV_UID')); 
 	define( 'APP_SQLSRV_PSWD', getenv('APP_SQLSRV_PSWD'));
 	define( 'ERROR_LOG_QUERIES', false );
-	define( 'WP_ISSUES_CRM_MAP_DATA_LAYERS',json_decode(getenv('WP_ISSUES_CRM_MAP_DATA_LAYERS',true)));
+	define( 'WP_ISSUES_CRM_MAP_DATA_LAYERS',json_decode(getenv('WP_ISSUES_CRM_MAP_DATA_LAYERS'),true));
 	/*  Create a JSON string for your map layers variable which is an array:
 		
 		The following string encodes the array below:
