@@ -102,16 +102,16 @@ if ( 'PROD' == CRM_ENVIRONMENT ) {
 *
 * this can be changed any time, which have the effect of invalidating session cookies and stored passwords
 */
-define('NONCE_KEY',getenv('NONCE_KEY'); // USE YOUR FAVORITE RANDOM LONG STRING GENERATOR 
+define('NONCE_KEY',getenv('NONCE_KEY')) // USE YOUR FAVORITE RANDOM LONG STRING GENERATOR 
 /* include as long using geojson files */
-define( 'WP_ISSUES_CRM_MAP_DATA_CREDIT', getenv('WP_ISSUES_CRM_MAP_DATA_CREDIT'); /*For example:  'Boundary Layers from \<a href=\"https\:\/\/www.mass.gov\/orgs\/massgis-bureau-of-geographic-information\" target = \"_blank\"\>MassGIS\<\/a\> converted using \<a href=\"https:\/\/www.macgis.com\/\" target=\"_blank\"\>Cartographica\<\/a\> and \<a href=\"https\:\/\/mygeodata.cloud\" target=\"_blank\"\>mygeodata.cloud\<\/\a\>.'
+define( 'WP_ISSUES_CRM_MAP_DATA_CREDIT', getenv('WP_ISSUES_CRM_MAP_DATA_CREDIT')); /*For example:  'Boundary Layers from \<a href=\"https\:\/\/www.mass.gov\/orgs\/massgis-bureau-of-geographic-information\" target = \"_blank\"\>MassGIS\<\/a\> converted using \<a href=\"https:\/\/www.macgis.com\/\" target=\"_blank\"\>Cartographica\<\/a\> and \<a href=\"https\:\/\/mygeodata.cloud\" target=\"_blank\"\>mygeodata.cloud\<\/\a\>.'
 /*
 * resource limits
 */
 define('MAX_MESSAGE_SIZE',getenv('define('MAX_MESSAGE_SIZE',getenv('E_KEY') ); // 20000000 OUTLOOK/EXCHANGE LIMIT ATTACHMENTS TO 20MG use this as a limit to processing incoming messages
 ') ); // 20000000 OUTLOOK/EXCHANGE LIMIT ATTACHMENTS TO 20MG use this as a limit to processing incoming messages
 define('MAX_FILE_SIZE', getenv('MAX_FILE_SIZE') ); // 40000000 well below batch size limit [right measure?] https://docs.microsoft.com/en-us/sql/sql-server/maximum-capacity-specifications-for-sql-server?view=sql-server-ver15
-ini_set('memory_limit', getenv('memory_limit'); // 128M Still tuning this
+ini_set('memory_limit', getenv('memory_limit')); // 128M Still tuning this
 /*
 *
 * set default time zone for date time functions
