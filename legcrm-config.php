@@ -45,30 +45,39 @@ if (extension_loaded('xdebug')) {
 if ( 'PROD' == CRM_ENVIRONMENT ) {
 /* 
 * 
-* DEFINE PRODUCTION PARAMETERS HERE 
+* DEFINE PRODUCTION PARAMETERS AS ENVIRONMENT VARIABLES IN AZURE WEB APP
+* https://learn.microsoft.com/en-us/azure/app-service/configure-common?tabs=portal
+* Everything other than letters, numbers, periods and underscores need to be escaped with back slash
+* 
 *
-* NOTE SHOULD CONSIDER SWITCHING TO ACTIVE DIRECTORY AUTHENTICATION FOR DATABASE ACCESS
-* ON THE OTHER HAND, FIREWALL LIMITS TO DESIGNATED IP ADDRESSES . . . SO BELT AND SUSPENDERS?
+* CAN ALTERNATIVELY HARD CODE WHEN TESTING
+*
 */
 	define( 'OVERRIDE_AZURE_SECURITY_FOR_TESTING', false ); 
-	define( 'SITE_DOMAIN', 'yourdomain.com'); // change this to your domain
+	define( 'SITE_DOMAIN', getenv('SITE_DOMAIN')); // change this to your domain
 	define( 'SITE_USING_SSL', true );
 	define( 'SQL_ENCRYPT', 1 ); // communication btw app and database server
-	define( 'APP_SQLSRV_NAME', 'legcrm1' ); // this is the name of the database can use different name if set up different database
-	define( 'APP_SQLSRV_HOST', 'tcp:host,1433' ); // this is the name of database server -- get this from the connection string for the server
-	define( 'APP_SQLSRV_UID', 'uid' ); 
-	define( 'APP_SQLSRV_PSWD', 'password');
+	define( 'APP_SQLSRV_NAME', getenv('APP_SQLSRV_NAME') ); // this is the name of the database can use different name if set up different database
+	define( 'APP_SQLSRV_HOST', getenv('APP_SQLSRV_HOST') ); // this is the name of database server -- get this from the connection string for the server
+	define( 'APP_SQLSRV_UID', getenv('APP_SQLSRV_UID')); 
+	define( 'APP_SQLSRV_PSWD', getenv('APP_SQLSRV_PSWD'));
 	define( 'ERROR_LOG_QUERIES', false );
-	define( 'WP_ISSUES_CRM_MAP_DATA_LAYERS',
+	define( 'WP_ISSUES_CRM_MAP_DATA_LAYERS',json_decode(getenv('WP_ISSUES_CRM_MAP_DATA_LAYERS',true));
+	/*  Create a JSON string for your map layers variable which is an array:
+		
+		The following string encodes the array below:
+		[{"layerId":"senate","layerTitle":"Senate Districts","layerURL":"https:\/\/your_senatedistricts.geojson","link":"URL","featureTitle":"SENATOR","legend":"SEN_DIST","strokeColor":"#0000ff","strokeWeight":3,"strokeOpacity":0.2},{"layerId":"house","layerTitle":"House Districts","layerURL":"https:\/\/your_housedistrict.geojson","link":"URL","featureTitle":"REP","legend":"REP_DIST","strokeColor":"#ff0000","strokeWeight":2,"strokeOpacity":0.5},{"layerId":"muni","layerTitle":"Municipalities","layerURL":"https:\/\/your_municipalities.geojson","link":false,"featureTitle":"TOWN","legend":"POP2010","strokeColor":"#444","strokeWeight":4,"strokeOpacity":0.2}]
+		In environment setting, need to escape further: \[\{\"layerId\"\:\"senate\"\,\"layerTitle\"\:\"Senate Districts\"\,\"layerURL\"\:\"https\:\\\/\\\/your_senatedistricts.geojson\"\,\"link\"\:\"URL\"\,\"featureTitle\"\:\"SENATOR\"\,\"legend\"\:\"SEN_DIST\"\,\"strokeColor\"\:\"#0000ff\"\,\"strokeWeight\"\:3\,\"strokeOpacity\"\:0.2\}\,\{\"layerId\"\:\"house\"\,\"layerTitle\"\:\"House Districts\"\,\"layerURL\"\:\"https\:\\\/\\\/your_housedistrict.geojson\"\,\"link\"\:\"URL\"\,\"featureTitle\"\:\"REP\"\,\"legend\"\:\"REP_DIST\"\,\"strokeColor\"\:\"#ff0000\"\,\"strokeWeight\"\:2\,\"strokeOpacity\"\:0.5\}\,\{\"layerId\"\:\"muni\"\,\"layerTitle\"\:\"Municipalities\"\,\"layerURL\"\:\"https\:\\\/\\\/your_municipalities.geojson\"\,\"link\"\:false\,\"featureTitle\"\:\"TOWN\"\,\"legend\"\:\"POP2010\"\,\"strokeColor\"\:\"#444\"\,\"strokeWeight\"\:4\,\"strokeOpacity\"\:0.2\}\]
 		array (
 			array( 'layerId' =>'senate', 'layerTitle' => 'Senate Districts', 'layerURL' => 'https://your_senatedistricts.geojson', 'link' => 'URL', 'featureTitle' => 'SENATOR', 'legend' => 'SEN_DIST', 'strokeColor' => '#0000ff', 'strokeWeight' => 3, 'strokeOpacity' => .2),
 			array( 'layerId' =>'house', 'layerTitle' => 'House Districts', 'layerURL' => 'https://your_housedistrict.geojson',  'link' => 'URL', 'featureTitle' => 'REP', 'legend' => 'REP_DIST', 'strokeColor' => '#ff0000', 'strokeWeight' => 2, 'strokeOpacity' => .5),
 			array( 'layerId' =>'muni', 'layerTitle' => 'Municipalities', 'layerURL' => 'https://your_municipalities.geojson', 'link' => false, 'featureTitle' => 'TOWN', 'legend' => 'POP2010', 'strokeColor' => '#444', 'strokeWeight' => 4, 'strokeOpacity' => .2),
 		)
-	); 
-	define( 'WIC_USER_NAME_FOR_POSTAL_ADDRESS_INTERFACE', 'xxxxxxxxx');
-	define( 'WIC_GOOGLE_MAPS_API_KEY', 'xxxxxxxxxx');
-	define( 'WIC_GEOCODIO_API_KEY', 'xxxxxxxxx');
+	);
+	*/ 
+	define( 'WIC_USER_NAME_FOR_POSTAL_ADDRESS_INTERFACE', getenv('WIC_USER_NAME_FOR_POSTAL_ADDRESS_INTERFACE'));
+	define( 'WIC_GOOGLE_MAPS_API_KEY', getenv('WIC_GOOGLE_MAPS_API_KEY'));
+	define( 'WIC_GEOCODIO_API_KEY', getenv('WIC_GEOCODIO_API_KEY'));
 /* 
 *
 * At set up continue review below for additional parameters 
@@ -93,15 +102,16 @@ if ( 'PROD' == CRM_ENVIRONMENT ) {
 *
 * this can be changed any time, which have the effect of invalidating session cookies and stored passwords
 */
-define('NONCE_KEY','insert your own random string -- wTFW7rjs~h*yeCo|f+{|J.,T1R aa1of`||dcpHp?)|Ym`oskF/ZdZ|#t9sK$!9um;KMZ`^^Z$a28gZ*RrSZt1?)*UM!0tf9U+#JaM%Wt]!-:gl+|g,T:.-e>}#O(Vv');
+define('NONCE_KEY',getenv('NONCE_KEY'); // USE YOUR FAVORITE RANDOM LONG STRING GENERATOR 
 /* include as long using geojson files */
-define( 'WP_ISSUES_CRM_MAP_DATA_CREDIT', 'For example:  Boundary Layers from <a href="https://www.mass.gov/orgs/massgis-bureau-of-geographic-information" target = "_blank">MassGIS</a> converted using <a href="https://www.macgis.com/" target="_blank">Cartographica</a> and <a href="https://mygeodata.cloud" target="_blank">mygeodata.cloud</a>.');
+define( 'WP_ISSUES_CRM_MAP_DATA_CREDIT', getenv('WP_ISSUES_CRM_MAP_DATA_CREDIT'); /*For example:  'Boundary Layers from \<a href=\"https\:\/\/www.mass.gov\/orgs\/massgis-bureau-of-geographic-information\" target = \"_blank\"\>MassGIS\<\/a\> converted using \<a href=\"https:\/\/www.macgis.com\/\" target=\"_blank\"\>Cartographica\<\/a\> and \<a href=\"https\:\/\/mygeodata.cloud\" target=\"_blank\"\>mygeodata.cloud\<\/\a\>.'
 /*
 * resource limits
 */
-define('MAX_MESSAGE_SIZE',20000000 ); // OUTLOOK/EXCHANGE LIMIT ATTACHMENTS TO 20MG use this as a limit to processing incoming messages
-define('MAX_FILE_SIZE',40000000 ); // well below batch size limit [right measure?] https://docs.microsoft.com/en-us/sql/sql-server/maximum-capacity-specifications-for-sql-server?view=sql-server-ver15
-ini_set('memory_limit', '128M'); // Still tuning this
+define('MAX_MESSAGE_SIZE',getenv('define('MAX_MESSAGE_SIZE',getenv('E_KEY') ); // 20000000 OUTLOOK/EXCHANGE LIMIT ATTACHMENTS TO 20MG use this as a limit to processing incoming messages
+') ); // 20000000 OUTLOOK/EXCHANGE LIMIT ATTACHMENTS TO 20MG use this as a limit to processing incoming messages
+define('MAX_FILE_SIZE', getenv('MAX_FILE_SIZE') ); // 40000000 well below batch size limit [right measure?] https://docs.microsoft.com/en-us/sql/sql-server/maximum-capacity-specifications-for-sql-server?view=sql-server-ver15
+ini_set('memory_limit', getenv('memory_limit'); // 128M Still tuning this
 /*
 *
 * set default time zone for date time functions
@@ -113,7 +123,7 @@ ini_set('memory_limit', '128M'); // Still tuning this
 * 	-- exception: in parsed_message_json, original email_date_time UTC is preserved
 *	-- exception: some utc stamps used as seconds
 */
-date_default_timezone_set( 'America/New_York');
+date_default_timezone_set( getenv('TIME_ZONE')); // 'America/New_York'
 // 
 
 // This setting should be in php.ini: default_charset = "utf-8";
@@ -123,7 +133,7 @@ date_default_timezone_set( 'America/New_York');
 * note that Office max rate is 30 per minute and we enforce that with delay time
 * this config is for continuous web job, but uses some parms from rotation model
 */
-define( 'WP_ISSUES_CRM_MESSAGE_MAX_SINGLE_SEND', 1000 ); // define max sends -- a little arbitrary -- office max be 10,000/day
+define( 'WP_ISSUES_CRM_MESSAGE_MAX_SINGLE_SEND', getenv('WP_ISSUES_CRM_MESSAGE_MAX_SINGLE_SEND') ); // define max sends -- a little arbitrary -- office max be 10,000/day
 /*
 *
 * AUTOLOADER AND STACK TRACE 
