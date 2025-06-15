@@ -53,6 +53,10 @@ if ( 'PROD' == CRM_ENVIRONMENT ) {
 * CAN ALTERNATIVELY HARD CODE WHEN TESTING
 *
 */
+	define( 'CRM_NAME', getenv('CRM_NAME')); // will display at top of most pages
+	define ('STYLE_OVERRIDES',getenv('STYLE_OVERRIDES')); // will be appended to head within style tags
+	define ('OVERRIDE_ACTIVITY_TYPES',getenv('OVERRIDE_ACTIVITY_TYPES')); // optional override of activity types
+	define ('OVERRIDE_FINANCIAL_ACTIVITY_TYPES',getenv('OVERRIDE_FINANCIAL_ACTIVITY_TYPES')); // if override types and include financial should isolate them
 	define( 'OVERRIDE_AZURE_SECURITY_FOR_TESTING', false ); 
 	define( 'SITE_DOMAIN', getenv('SITE_DOMAIN')); // change this to your domain
 	define( 'SITE_USING_SSL', true );

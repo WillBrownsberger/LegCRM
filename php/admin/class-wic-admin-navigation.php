@@ -57,7 +57,7 @@ class WIC_Admin_Navigation {
 	*/
 	private $nav_array = array (
 		'wp-issues-crm-main' =>	array (
-			'name'		=>  'Legislative CRM', 
+			'name'		=>  CRM_NAME, 
 			'default'	=>	array ( 'dashboard', 'dashboard' ),// default entity/action to invoke if $_GET does not contain permitted entity and actions
 			'permitted'	=>	array ( 							// permissible entity/action pairs for the page on a GET request
 								array (	'constituent',		'id_search'		),

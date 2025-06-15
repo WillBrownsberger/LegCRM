@@ -602,6 +602,24 @@ This issue was created ' . current_time( 'YmdHis' ) . '.
 
 	}
 
+	// override parent function to support environment assignment of activity type options
+	public static function get_option_group( $group ) {
+		if ( !isset ( static::$option_groups[$group]) ) {
+			return false;
+		} elseif ($group == 'activity_type_options') {
+			return array_merge(
+				static::$option_groups['reserved_activity_type_options'],
+				(OVERRIDE_ACTIVITY_TYPES ? json_decode(OVERRIDE_ACTIVITY_TYPES, true) : static::$option_groups['activity_type_options'])
+			);
+		} else {
+			return static::$option_groups[$group];
+		}
+	}
+
+	public static function get_financial_types() {
+		return OVERRIDE_FINANCIAL_ACTIVITY_TYPES ? json_decode(OVERRIDE_FINANCIAL_ACTIVITY_TYPES) : static::$financial_types;
+	}
+
 	protected static $entity_dictionary = array(
 
 		'activity_amount'=> array(
@@ -776,10 +794,12 @@ This issue was created ' . current_time( 'YmdHis' ) . '.
 			array('value'=>'6','label'=>'Conversion',),
 			array('value'=>'7','label'=>'Case Closure',),
 			array('value'=>'MO','label'=>'Member Of',),
+		),
+		'reserved_activity_type_options'=> array(
 			array('value'=>'wic_reserved_77777777','label'=>'Document',),
 			array('value'=>'wic_reserved_00000000','label'=>'Email In',),
 			array('value'=>'wic_reserved_99999998','label'=>'Queued email',),
-			array('value'=>'wic_reserved_99999999','label'=>'Email Out',)),
+			array('value'=>'wic_reserved_99999999','label'=>'Email Out',)),			
 		/* NOTE THAT THIS VALUE SET IS ASSUMED IN MULTIPLE PLACES IN CODE */
 		  'pro_con_options'=> array(
 				array('value'=>'0','label'=>'Pro',),

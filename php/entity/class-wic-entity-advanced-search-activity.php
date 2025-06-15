@@ -41,7 +41,7 @@ class WIC_Entity_Advanced_Search_Activity extends WIC_Entity_Advanced_Search_Row
 
 	// look up values including system reserved values (overwrite reservation value)
 	public static function activity_type_options_all () {
-		return ( WIC_ENTITY_Activity::$option_groups['activity_type_options'] );
+		return ( WIC_ENTITY_Activity::get_option_group() );
 	}
 
 	protected static $entity_dictionary = array(

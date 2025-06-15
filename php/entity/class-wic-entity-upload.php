@@ -151,6 +151,17 @@ class WIC_Entity_Upload extends WIC_Entity_Parent {
 		return ( WIC_Entity_Activity::get_issue_options( $value ) );
 	}
 
+	public static function get_option_group( $group ) {
+		if ( !isset ( static::$option_groups[$group]) ) {
+			return false;
+		} elseif ($group == 'activity_type_options') {
+				return WIC_Entity_Activity::get_option_group();
+		} else {
+			return static::$option_groups[$group];
+		}
+	}
+
+
     protected static $entity_dictionary = array(
 
 
@@ -555,21 +566,8 @@ class WIC_Entity_Upload extends WIC_Entity_Parent {
 
 	 public static $option_groups = array(
 		'activity_type_options'=> array(
-			array('value'=>'','label'=>'Type?',),
-			array('value'=>'0','label'=>'eMail',),
-			array('value'=>'1','label'=>'Call',),
-			array('value'=>'2','label'=>'Petition',),
-			array('value'=>'3','label'=>'Meeting',),
-			array('value'=>'4','label'=>'Letter In',),
-			array('value'=>'LO','label'=>'Letter Out',),
-			array('value'=>'5','label'=>'Social Media Contact',),
-			array('value'=>'6','label'=>'Conversion',),
-			array('value'=>'7','label'=>'Case Closure',),
-			array('value'=>'MO','label'=>'Member Of',),
-			array('value'=>'wic_reserved_77777777','label'=>'Document',),
-			array('value'=>'wic_reserved_00000000','label'=>'Email In',),
-			array('value'=>'wic_reserved_99999998','label'=>'Queued email',),
-			array('value'=>'wic_reserved_99999999','label'=>'Email Out',)),
+			// refer back to WIC_Entity_Activity
+		),
 		'address_type_options'=> array(
 		  array('value'=>'','label'=>'Type?',),
 			  array('value'=>'0','label'=>'Home',),

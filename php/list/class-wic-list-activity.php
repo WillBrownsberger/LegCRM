@@ -58,7 +58,7 @@ class WIC_List_Activity extends WIC_List_Parent {
 		$line_count = 1;
 
 		// get financial activity types to avoid showing nonsensical zero amounts
-		$financial_types_array = WIC_Entity_Activity::$financial_types;
+		$financial_types_array = WIC_Entity_Activity::get_financial_types();
 		
 		foreach ( $wic_query->result as $row_array ) {
 
