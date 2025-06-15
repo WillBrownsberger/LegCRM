@@ -608,8 +608,9 @@ This issue was created ' . current_time( 'YmdHis' ) . '.
 			return false;
 		} elseif ($group == 'activity_type_options') {
 			return array_merge(
-				static::$option_groups['reserved_activity_type_options'],
-				(OVERRIDE_ACTIVITY_TYPES ? json_decode(OVERRIDE_ACTIVITY_TYPES, true) : static::$option_groups['activity_type_options'])
+				array(array('value'=>'','label'=>'Type?',)),
+				(OVERRIDE_ACTIVITY_TYPES ? json_decode(OVERRIDE_ACTIVITY_TYPES, true) : static::$option_groups['activity_type_options']),
+				static::$option_groups['reserved_activity_type_options']
 			);
 		} else {
 			return static::$option_groups[$group];

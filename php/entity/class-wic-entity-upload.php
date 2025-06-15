@@ -155,7 +155,7 @@ class WIC_Entity_Upload extends WIC_Entity_Parent {
 		if ( !isset ( static::$option_groups[$group]) ) {
 			return false;
 		} elseif ($group == 'activity_type_options') {
-				return WIC_Entity_Activity::get_option_group();
+				return WIC_Entity_Activity::get_option_group('activity_type_options');
 		} else {
 			return static::$option_groups[$group];
 		}
