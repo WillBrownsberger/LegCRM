@@ -72,9 +72,9 @@ class WIC_Form_Upload_Complete extends WIC_Form_Upload  {
 	public static function summary_results ( &$data_array ) {
 			// retrieve/compute file totals
 		
-		$match_results 		= json_decode ( $data_array['serialized_match_results']->get_value() );
-		$default_decisions 	= json_decode ( $data_array['serialized_default_decisions']->get_value() );
-		$final_results 		= json_decode ( $data_array['serialized_final_results']->get_value() );
+		$match_results 		= json_decode ( $data_array['serialized_match_results']->get_value() ?? '');
+		$default_decisions 	= json_decode ( $data_array['serialized_default_decisions']->get_value() ?? '');
+		$final_results 		= json_decode ( $data_array['serialized_final_results']->get_value() ?? '' );
 
 		$valid_matched = 0;
 		$valid_unique  = 0;

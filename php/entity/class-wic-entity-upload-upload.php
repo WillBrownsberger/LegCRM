@@ -318,8 +318,9 @@ class WIC_Entity_Upload_Upload {
  	
 	public static function verify_upload ( $id, $data ) { 
  	
+		// this setting deprecated in 8.1 
 		// handles MAC uploads
-		ini_set('auto_detect_line_endings', true);
+		// ini_set('auto_detect_line_endings', true);
  	
 		$upload_details = self::get_the_upload ( $id );
 		if ( isset ( $upload_details['response_code'] ) )  {
@@ -386,8 +387,9 @@ class WIC_Entity_Upload_Upload {
 		extract ( $upload_parameters );
 		set_time_limit ( $max_execution_time );  // attempt this -- host may not allow it 	
 		
+		// this setting deprecated in php 8.1
 		// handles MAC uploads ( need to repeat here -- lasts only through the transaction )
-		ini_set('auto_detect_line_endings', true);
+		// ini_set('auto_detect_line_endings', true); deprecated
 		
 		// get the temp file handle
 		$upload_details = self::get_the_upload ( $id );
@@ -396,7 +398,7 @@ class WIC_Entity_Upload_Upload {
 		}
 		extract ( $upload_details );
 		
-		$serialized_upload_parameters = json_decode ( $serialized_upload_parameters );
+		$serialized_upload_parameters = json_decode ( $serialized_upload_parameters ?? '');
 		// do a cleanup in case user previously attempted or completed parse/staging process 
 		if ( isset ( $serialized_upload_parameters->staging_table_name ) ) {
 			$stub = $serialized_upload_parameters->staging_table_name;  
