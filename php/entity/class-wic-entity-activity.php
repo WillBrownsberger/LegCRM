@@ -618,7 +618,7 @@ This issue was created ' . current_time( 'YmdHis' ) . '.
 	}
 
 	public static function get_financial_types() {
-		return OVERRIDE_FINANCIAL_ACTIVITY_TYPES ? json_decode(OVERRIDE_FINANCIAL_ACTIVITY_TYPES) : static::$financial_types;
+		return OVERRIDE_FINANCIAL_ACTIVITY_TYPES ? json_decode(OVERRIDE_FINANCIAL_ACTIVITY_TYPES,true) : static::$financial_types;
 	}
 
 	protected static $entity_dictionary = array(
