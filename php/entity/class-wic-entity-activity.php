@@ -264,7 +264,7 @@ class WIC_Entity_Activity extends WIC_Entity_Parent {
 				'<span class="activity_list_activity_type">' . safe_html ( $activity->activity_type ). '</span>' .
 				'<span class="activity_list_activity_type_show">' . ( $activity->activity_type > '' ? safe_html( value_label_lookup ( $activity->activity_type, static::get_option_group('activity_type_options' ) ) ) : '' )  . '</span>' . ( $activity->activity_type > '' ? ', '  : '' ) .
 				'<span class="activity_list_activity_amount">' . safe_html( $activity->activity_amount ) .'</span>' .
-				'<span class="activity_list_activity_amount_show">' . ( in_array( $activity->activity_type, self::$financial_types ) ? safe_html( $activity->activity_amount ) . ', ' : '' ) . '</span> ' .
+				'<span class="activity_list_activity_amount_show">' . ( in_array( $activity->activity_type, self::get_financial_types() ) ? safe_html( $activity->activity_amount ) . ', ' : '' ) . '</span> ' .
 				'<span class="activity_list_issue">' . safe_html ( $activity->issue ) . '</span>' .
 				'<span class="activity_list_issue_show"><a class = "activity_list_issue_show_link" target = "_blank" href = "' .WIC_Admin_Setup::root_url() . '/?page=wp-issues-crm-main&entity=issue&action=id_search&id_requested=' . safe_html( $activity->issue ). '">' . safe_html( $activity->post_title ) .'</a></span>' .
 				'<span class="activity_list_constituent_id">' . $activity->constituent_id . '</span>' .

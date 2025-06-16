@@ -531,7 +531,7 @@ class WIC_DB_Access_Advanced_Search Extends WIC_DB_Access {
 
 		// prepare 'IN' phrase
 		$in_phrase = ', 0 as includes_financial_types '; // below, will give this a value > 0 if (a) they are set up and (b) there are some found;			
-		$financial_activity_type_array = WIC_Entity_Activity::$financial_types ;
+		$financial_activity_type_array = WIC_Entity_Activity::get_financial_types() ;
 		$formatted_financial_activity_type_string = '';			
 		if ( '' != $financial_activity_type_array ) {
 			foreach ( $financial_activity_type_array as $type ) {

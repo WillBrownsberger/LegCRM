@@ -195,7 +195,7 @@ class WIC_Admin_Setup {
 		// add option array to variables array
 		$script_variables['wpIssuesCRMSettings'] = 
 			array( 
-				'financialCodesArray'	=> WIC_Entity_Activity::$financial_types,
+				'financialCodesArray'	=> WIC_Entity_Activity::get_financial_types(),
 				'maxFileSize' 			=> WIC_Entity_Upload_Upload::get_safe_file_size(),
 				'dearToken' 			=> WIC_Entity_Email_Send::dear_token,
 				'canViewAllEmail' 		=> $current_user->current_user_authorized_to ('all_email'),
