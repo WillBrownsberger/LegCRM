@@ -68,7 +68,7 @@ if ( 'PROD' == CRM_ENVIRONMENT ) {
 	define( 'ERROR_LOG_QUERIES', false );
 	define( 'WP_ISSUES_CRM_MAP_DATA_LAYERS',json_decode(getenv('WP_ISSUES_CRM_MAP_DATA_LAYERS'),true));
 	/*  Create a JSON string for your map layers variable which is an array:
-		
+	/*  Can have varying array elements -- no need to name them exactly as in this example	
 		The following string encodes the array below:
 		[{"layerId":"senate","layerTitle":"Senate Districts","layerURL":"https:\/\/your_senatedistricts.geojson","link":"URL","featureTitle":"SENATOR","legend":"SEN_DIST","strokeColor":"#0000ff","strokeWeight":3,"strokeOpacity":0.2},{"layerId":"house","layerTitle":"House Districts","layerURL":"https:\/\/your_housedistrict.geojson","link":"URL","featureTitle":"REP","legend":"REP_DIST","strokeColor":"#ff0000","strokeWeight":2,"strokeOpacity":0.5},{"layerId":"muni","layerTitle":"Municipalities","layerURL":"https:\/\/your_municipalities.geojson","link":false,"featureTitle":"TOWN","legend":"POP2010","strokeColor":"#444","strokeWeight":4,"strokeOpacity":0.2}]
 		array (
